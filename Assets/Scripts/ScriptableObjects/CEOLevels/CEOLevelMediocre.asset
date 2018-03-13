@@ -9,7 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5af00cd73514bd14190aa7875ddcb846, type: 3}
-  m_Name: CEOGood
+  m_Name: CEOLevelMediocre
   m_EditorClassIdentifier: 
-  compentcyScore: 85
-  employmentTurns: 75
+  compentcyScoreMinimum: 50
+  compentcyScoreMaximum: 69
+  employmentDaysMinimum: 365
+  employmentDaysMaximum: 1095
+  gameLevel: {fileID: 11400000, guid: 59e96eba903a5164c946dbe260fc70fc, type: 2}

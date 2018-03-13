@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5af00cd73514bd14190aa7875ddcb846, type: 3}
+  m_Name: CEOLevelTerrible
+  m_EditorClassIdentifier: 
+  compentcyScoreMinimum: 5
+  compentcyScoreMaximum: 49
+  employmentDaysMinimum: 180
+  employmentDaysMaximum: 730
+  gameLevel: {fileID: 11400000, guid: 20f5b8c7ff8384d4ea627f21e7a3943b, type: 2}
