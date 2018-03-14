@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4af7ddbbd2833bd47b9ef357cb371266, type: 3}
+  m_Name: CompanyLevelTerrible
+  m_EditorClassIdentifier: 
+  companyStrengthMin: 5
+  companyStrengthMax: 49
+  gameLevel: {fileID: 11400000, guid: 20f5b8c7ff8384d4ea627f21e7a3943b, type: 2}
