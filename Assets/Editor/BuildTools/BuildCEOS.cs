@@ -8,7 +8,8 @@ public class BuildCEOS
     [MenuItem("Assets/Create/Build Tools/BuildCEOS")]
     public static void Create()
     {
-     string buildDirectory = "Assets/Build/CEOs";
+     string buildDirectory = "Assets/_Project/Scripts/ScriptableObjects/CEOs";
+        int BuildAmount = 100; // # of assets to build.
 
         // TODO - need to clean out directory each run (make it optional?)
         // TODO - need to make many CEOs (any way to select # to make?)
@@ -25,9 +26,9 @@ public class BuildCEOS
         List<string> lastNames = new List<string>();
 
         // Get Text Data
-        firstNamesMale = new List<string>(System.IO.File.ReadAllLines("Assets\\SeedData\\PeopleNames\\FirstNames-Male.txt"));
-        firstNamesFemale = new List<string>(System.IO.File.ReadAllLines("Assets\\SeedData\\PeopleNames\\FirstNames-Female.txt"));
-        lastNames = new List<string>(System.IO.File.ReadAllLines("Assets\\SeedData\\PeopleNames\\LastNames.txt"));
+        firstNamesMale = new List<string>(System.IO.File.ReadAllLines("Assets\\_Project\\SeedData\\PeopleNames\\FirstNames-Male.txt"));
+        firstNamesFemale = new List<string>(System.IO.File.ReadAllLines("Assets\\_Project\\SeedData\\PeopleNames\\FirstNames-Female.txt"));
+        lastNames = new List<string>(System.IO.File.ReadAllLines("Assets\\_Project\\SeedData\\PeopleNames\\LastNames.txt"));
 
         // create List of Gender
         List<Gender> genders = new List<Gender>();
@@ -52,32 +53,39 @@ public class BuildCEOS
             ceoLevels.Add(AssetDatabase.LoadAssetAtPath<CEOLevel>(path));
         }
 
-        // pick random items
-        int currentGender = Random.Range(0, genders.Count);
-        int currentCEOLevel = Random.Range(0, ceoLevels.Count);
-        int currentFirstNameMale = Random.Range(0, firstNamesMale.Count);
-        int currentFirstNameFemale = Random.Range(0, firstNamesFemale.Count);
-        int currentLastName = Random.Range(0, lastNames.Count);
+        for (int index = 0; index < BuildAmount; index++)
+        {
+            // pick random items
+            int currentGender = Random.Range(0, genders.Count);
+            int currentCEOLevel = Random.Range(0, ceoLevels.Count);
+            int currentFirstNameMale = Random.Range(0, firstNamesMale.Count);
+            int currentFirstNameFemale = Random.Range(0, firstNamesFemale.Count);
+            int currentLastName = Random.Range(0, lastNames.Count);
 
-        // Create CEO Asset
-        CEO asset = ScriptableObject.CreateInstance<CEO>();
-        // is this CEO male or female?
-        if (genders[currentGender].name == "MALE")
-        {
-            asset.firstName = firstNamesMale[currentFirstNameMale];
-        } else
-        {
-            asset.firstName = firstNamesFemale[currentFirstNameFemale];
+            // Create CEO Asset
+            CEO asset = ScriptableObject.CreateInstance<CEO>();
+            // is this CEO male or female?
+            if (genders[currentGender].name == "MALE")
+            {
+                asset.firstName = firstNamesMale[currentFirstNameMale].Trim();
+            }
+            else
+            {
+                asset.firstName = firstNamesFemale[currentFirstNameFemale].Trim();
+            }
+            asset.lastName = lastNames[currentLastName].Trim();
+            asset.gender = genders[currentGender];
+            asset.ceoLevel = ceoLevels[currentCEOLevel];
+            AssetDatabase.CreateAsset(asset, buildDirectory + "/CEO-" + asset.firstName + "-" + asset.lastName + ".asset");
+
+            // Save Asset
+            AssetDatabase.SaveAssets();
         }
-        asset.lastName = lastNames[currentLastName];
-        asset.gender = genders[currentGender];
-        asset.ceoLevel = ceoLevels[currentCEOLevel];
-        AssetDatabase.CreateAsset(asset, buildDirectory + "/CEO-" + asset.firstName + "-" + asset.lastName + ".asset");
 
-        // Save Asset
-        AssetDatabase.SaveAssets();
-        EditorUtility.FocusProjectWindow();
-        Selection.activeObject = asset;
+        Debug.Log("CEO Build Completed. Made: " + BuildAmount + " CEOS");
+       
+       // EditorUtility.FocusProjectWindow();
+       // Selection.activeObject = asset;
 
     }
 

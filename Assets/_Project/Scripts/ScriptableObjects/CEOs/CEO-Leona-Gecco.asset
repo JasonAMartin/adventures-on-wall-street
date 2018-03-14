@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f352e98c819b35d478835af46e7cdda1, type: 3}
+  m_Name: CEO-Leona-Gecco
+  m_EditorClassIdentifier: 
+  firstName: Leona
+  lastName: Gecco
+  gender: {fileID: 11400000, guid: 6859967a75b32444d8e78949fc615e75, type: 2}
+  ceoLevel: {fileID: 11400000, guid: 46be677068962ae419558cea43e300ad, type: 2}
