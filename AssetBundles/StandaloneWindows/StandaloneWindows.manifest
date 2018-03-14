@@ -1,0 +1,7 @@
+ManifestFileVersion: 0
+CRC: 3622065778
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: ceolevels
+      Dependencies: {}

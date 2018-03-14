@@ -1,0 +1,24 @@
+ManifestFileVersion: 0
+CRC: 1520344940
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: aa895e27c7ff1fa6856081f26b3b3565
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: adf4a6ff0db0f5dd52a7f9b338fe83ea
+HashAppended: 0
+ClassTypes:
+- Class: 114
+  Script: {fileID: 11500000, guid: 5af00cd73514bd14190aa7875ddcb846, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1c3d075a930f73149ace2b90dd4eebac, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+Assets:
+- Assets/Scripts/ScriptableObjects/CEOLevels/CEOLevelGreat.asset
+- Assets/Scripts/ScriptableObjects/CEOLevels/CEOLevelTerrible.asset
+- Assets/Scripts/ScriptableObjects/CEOLevels/CEOLevelGood.asset
+- Assets/Scripts/ScriptableObjects/CEOLevels/CEOLevelMediocre.asset
+- Assets/Scripts/ScriptableObjects/CEOLevels/CEOLevelAverage.asset
+Dependencies: []
