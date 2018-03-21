@@ -11,4 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5e4179b790bbc742a7a149a8ef26fba, type: 3}
   m_Name: EventRulesetList
   m_EditorClassIdentifier: 
-  eventRulesetList: []
+  eventRulesetList:
+  - {fileID: 11400000, guid: 206a593bda8846c42a61d9421401c5d9, type: 2}
+  - {fileID: 11400000, guid: 6632f6ee1a264564fb4b280d8ae987a6, type: 2}
+  - {fileID: 11400000, guid: 398a013f2ae34514697325e482d3d540, type: 2}

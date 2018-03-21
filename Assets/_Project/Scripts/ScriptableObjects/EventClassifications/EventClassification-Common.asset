@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 056bddcbad6405d4190c332de7df62d9, type: 3}
   m_Name: EventClassification-Common
   m_EditorClassIdentifier: 
-  classification: {fileID: 0}
-  chanceToHappen: 0
+  classification: {fileID: 11400000, guid: 8113f5471a4e1984b95cdce01881e634, type: 2}
+  chanceToHappen: 25

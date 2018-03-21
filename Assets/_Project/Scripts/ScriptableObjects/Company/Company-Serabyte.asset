@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 521ab8b64041b084ba70f165fe3644e8, type: 3}
+  m_Name: Company-Serabyte
+  m_EditorClassIdentifier: 
+  companyName: Serabyte
+  stockSymbol: SB
+  companyType: {fileID: 11400000, guid: c2f96dd30a45f2a4486d2d0c2d5efcaa, type: 2}
+  stockPrice: 150
+  earliestStartingDay: 2147483647
+  companyStrength: {fileID: 11400000, guid: e34ba4db109b4d44ebbdfe4e80aeef4e, type: 2}
+  companyDescription: Company that made this awesome, fun game!
+  inBusiness: 1
+  ceo: {fileID: 0}

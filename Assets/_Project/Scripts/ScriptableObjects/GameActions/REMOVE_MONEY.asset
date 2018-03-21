@@ -8,8 +8,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 056bddcbad6405d4190c332de7df62d9, type: 3}
-  m_Name: EventClassification-Rare
+  m_Script: {fileID: 11500000, guid: 5dd1acaf353a47c4d87405c8d0d1cdca, type: 3}
+  m_Name: REMOVE_MONEY
   m_EditorClassIdentifier: 
-  classification: {fileID: 11400000, guid: 441c0a42d7f76fe438218b612de106d5, type: 2}
-  chanceToHappen: 5

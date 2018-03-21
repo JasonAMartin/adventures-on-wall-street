@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 056bddcbad6405d4190c332de7df62d9, type: 3}
-  m_Name: EventClassification-Common
+  m_Name: EventClassification-Uncommon
   m_EditorClassIdentifier: 
-  classification: {fileID: 0}
-  chanceToHappen: 0
+  classification: {fileID: 11400000, guid: ffd3d6d76ccb3dc4b8ffa0a4f5b4c32d, type: 2}
+  chanceToHappen: 15
