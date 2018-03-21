@@ -8,13 +8,15 @@ public class Events : ScriptableObject {
     public string eventName;
     public string eventHeadline;
     public string eventText;
+    public EventType eventType;
     // TODO event rules list
     public EventRuleset eventRulesetList; // The criteria for the event 
-    public bool isGoodEvent; // true = good for player, false = bad for player
+    public bool isScam; // if true, this event always loses.
     public int daysUntilCompleted; // how many days must pass before outcome is revealed.
-    public int capitalRequired; // how much money goes into holding for event
-    public int resultMinimumCapitalAmount; // the minimum amount the player gets or loses
-    public float resultOutcomePercent; // the percent of the player's money that is gained or lost.
+    public int capitalCashRequired; // Set this for setting hard $ amount for event.
+    public float capitalPercentRequired; // Set this for setting hard PERCENT amount for event. Only set this or cash.
+    public int resultCapitalCashGained; // the minimum amount the player gets
+    public float resultCapitalPercentGained; // the percent of the player's money that is gained
 }
 
 /*

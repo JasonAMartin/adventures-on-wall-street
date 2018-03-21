@@ -7,4 +7,6 @@ public class RelationshipDriver : ScriptableObject {
     public PlayerActions playerAction;
     public GameActions gameAction;
     public CompanyType companyType;
+    public GoodsType goodsType;
+    public EventType eventType;
 }
