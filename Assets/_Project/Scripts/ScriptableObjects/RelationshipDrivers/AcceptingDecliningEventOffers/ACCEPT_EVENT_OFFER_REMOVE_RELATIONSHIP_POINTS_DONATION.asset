@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd14ca978ba52db4f9ae1cf579c088b6, type: 3}
+  m_Name: ACCEPT_EVENT_OFFER_REMOVE_RELATIONSHIP_POINTS_DONATION
+  m_EditorClassIdentifier: 
+  playerAction: {fileID: 11400000, guid: e2e96e9c56502e44e8519a531479a738, type: 2}
+  gameAction: {fileID: 11400000, guid: f1fcad18a7b253941a6635d57980dafd, type: 2}
+  companyType: {fileID: 0}
+  goodsType: {fileID: 0}
+  eventType: {fileID: 11400000, guid: a21bf2fba416df045b81d149e2fae659, type: 2}

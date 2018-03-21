@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd14ca978ba52db4f9ae1cf579c088b6, type: 3}
+  m_Name: EVENT_FAILURE
+  m_EditorClassIdentifier: 
+  playerAction: {fileID: 11400000, guid: e2e96e9c56502e44e8519a531479a738, type: 2}
+  gameAction: {fileID: 0}
+  companyType: {fileID: 0}
+  goodsType: {fileID: 0}
+  eventType: {fileID: 0}

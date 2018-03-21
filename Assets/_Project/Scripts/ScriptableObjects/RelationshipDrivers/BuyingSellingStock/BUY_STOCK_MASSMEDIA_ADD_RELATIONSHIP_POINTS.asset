@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd14ca978ba52db4f9ae1cf579c088b6, type: 3}
+  m_Name: BUY_STOCK_MASSMEDIA_ADD_RELATIONSHIP_POINTS
+  m_EditorClassIdentifier: 
+  playerAction: {fileID: 11400000, guid: b14122de00b57334395f170be217b1c3, type: 2}
+  gameAction: {fileID: 11400000, guid: bb55a366f043ce64f80f746fd8d93032, type: 2}
+  companyType: {fileID: 11400000, guid: de8faa023af17bc419618e913c2171e7, type: 2}
