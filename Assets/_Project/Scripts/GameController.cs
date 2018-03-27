@@ -7,8 +7,6 @@ using System.IO;
 public class GameController : MonoBehaviour {
 
     public static GameController controller;
-    public CEOLevel ceoLevel;
-    public CEO CEOS;
     List<string> actionLog = new List<string>(); // this is for log of what's happened. Break it out to component?
 
    
