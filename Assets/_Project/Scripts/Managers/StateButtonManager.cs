@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class StateButtonManager : MonoBehaviour
 {
     public Button buttonName;
-    public enum ButtonType { SAVE, LOAD, NEW, SETTINGS }
+    public enum ButtonType { SAVE, LOAD, NEW, SETTINGS, QUIT }
     public ButtonType buttonType;
 
     void Start()
@@ -40,6 +40,13 @@ public class StateButtonManager : MonoBehaviour
             SettingsGameManager settingsGameManager = new SettingsGameManager();
             settingsGameManager.SettingsSetup();
         }
+
+        if (buttonType == ButtonType.QUIT)
+        {
+            QuitGameManager quitGameManager = new QuitGameManager();
+            quitGameManager.QuitGame();
+        }
+
 
 
         Debug.Log("You have clicked the button of type " + buttonType);
