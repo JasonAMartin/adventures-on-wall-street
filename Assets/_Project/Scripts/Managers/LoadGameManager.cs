@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using BayatGames.SaveGamePro;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class LoadGameManager
 {
@@ -16,7 +17,7 @@ public class LoadGameManager
 
 
         ///SaveGame.Save("demo.json", files, settings);
-
+        SceneManager.LoadScene("LoadGameScene", LoadSceneMode.Single);
         Debug.Log("load done");
 
     }
