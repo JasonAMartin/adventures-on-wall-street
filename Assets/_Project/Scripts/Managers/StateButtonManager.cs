@@ -9,6 +9,7 @@ public class StateButtonManager : MonoBehaviour
     public Button buttonName;
     public enum ButtonType { SAVE, LOAD, NEW, SETTINGS, QUIT, MAINMENU }
     public ButtonType buttonType;
+    public InputField saveGameName;
 
     void Start()
     {
