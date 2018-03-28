@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour {
 
     public static GameController controller;
     List<string> actionLog = new List<string>(); // this is for log of what's happened. Break it out to component?
-
+    private static bool created = false;
    
 
     private void Awake()
@@ -21,13 +21,20 @@ public class GameController : MonoBehaviour {
          * It's supposed to make it so there's only 1 persistant game controller so 
          * you don't need to do the bad game object find methods and such.
          */
-        if (controller == null)
+        //if (controller == null)
+        //{
+        //    DontDestroyOnLoad(gameObject);
+        //    controller = this;
+        //} else if (controller != this)
+        //{
+        //    Destroy(gameObject);
+        //}
+
+        if (!created)
         {
-            DontDestroyOnLoad(gameObject);
-            controller = this;
-        } else if (controller != this)
-        {
-            Destroy(gameObject);
+            DontDestroyOnLoad(this.gameObject);
+            created = true;
+            Debug.Log("Awake ...");
         }
 
     }

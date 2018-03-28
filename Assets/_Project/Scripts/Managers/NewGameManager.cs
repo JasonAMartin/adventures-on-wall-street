@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NewGameManager
 {
@@ -14,6 +15,7 @@ public class NewGameManager
 
 
         ///SaveGame.Save("demo.json", files, settings);
+        SceneManager.LoadScene("GameSettingUpScene", LoadSceneMode.Single);
 
         Debug.Log("setup done");
 

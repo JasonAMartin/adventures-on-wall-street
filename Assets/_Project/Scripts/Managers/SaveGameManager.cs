@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using BayatGames.SaveGamePro;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class SaveGameManager {
 
     public void SaveGameFile()
     {
+        SceneManager.LoadScene("SaveGameScene", LoadSceneMode.Single);
+
         SaveGameSettings settings = SaveGame.DefaultSettings;
         settings.Formatter = new BayatGames.SaveGamePro.Serialization.Formatters.Json.JsonFormatter();
         settings.Storage = new BayatGames.SaveGamePro.IO.SaveGameFileStorage();

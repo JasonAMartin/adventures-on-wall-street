@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class StateButtonManager : MonoBehaviour
 {
     public Button buttonName;
-    public enum ButtonType { SAVE, LOAD, NEW, SETTINGS, QUIT }
+    public enum ButtonType { SAVE, LOAD, NEW, SETTINGS, QUIT, MAINMENU }
     public ButtonType buttonType;
 
     void Start()
@@ -48,7 +49,11 @@ public class StateButtonManager : MonoBehaviour
         }
 
 
-
+        if (buttonType == ButtonType.MAINMENU)
+        {
+            MainMenuManager mainMenuManager = new MainMenuManager();
+            mainMenuManager.NavigateToMainMenu();
+        }
         Debug.Log("You have clicked the button of type " + buttonType);
     }
 }
