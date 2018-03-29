@@ -17,8 +17,13 @@ public class LoadGameManager
 
 
         ///SaveGame.Save("demo.json", files, settings);
-        SceneManager.LoadScene("LoadGameScene", LoadSceneMode.Single);
+        SceneManager.LoadSceneAsync("LoadGameScene", LoadSceneMode.Additive);
         Debug.Log("load done");
 
+    }
+
+    public void UnloadScene()
+    {
+        SceneManager.UnloadSceneAsync("LoadGameScene");
     }
 }

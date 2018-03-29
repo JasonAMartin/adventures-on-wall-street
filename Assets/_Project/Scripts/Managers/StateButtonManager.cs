@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class StateButtonManager : MonoBehaviour
 {
     public Button buttonName;
-    public enum ButtonType { SAVE, LOAD, NEW, SETTINGS, QUIT, MAINMENU, UNLOADSAVE }
+    public enum ButtonType { SAVE, LOAD, NEW, SETTINGS, QUIT, MAINMENU, UNLOADSAVE, UNLOADLOAD, UNLOADSETTINGS }
     public ButtonType buttonType;
     public InputField saveGameName;
 
@@ -23,6 +23,12 @@ public class StateButtonManager : MonoBehaviour
         {
             LoadGameManager loadGameManager = new LoadGameManager();
             loadGameManager.LoadGameFile();
+        }
+
+        if (buttonType == ButtonType.UNLOADLOAD)
+        {
+            LoadGameManager loadGameManager = new LoadGameManager();
+            loadGameManager.UnloadScene();
         }
 
         if (buttonType == ButtonType.SAVE)
@@ -47,6 +53,12 @@ public class StateButtonManager : MonoBehaviour
         {
             SettingsGameManager settingsGameManager = new SettingsGameManager();
             settingsGameManager.SettingsSetup();
+        }
+
+        if (buttonType == ButtonType.UNLOADSETTINGS)
+        {
+            SettingsGameManager settingsGameManager = new SettingsGameManager();
+            settingsGameManager.UnloadScene();
         }
 
         if (buttonType == ButtonType.QUIT)

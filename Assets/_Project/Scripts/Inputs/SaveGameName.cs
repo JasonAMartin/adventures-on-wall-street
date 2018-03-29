@@ -33,10 +33,13 @@ public class SaveGameName : MonoBehaviour {
         asset.compentcyScoreMinimum = 47;
         asset.employmentDaysMinimum = 1000;
         asset.employmentDaysMaximum = 9999;
+        Debug.Log("FILES: " + files.Length);
         SaveGame.Save(saveGameName.text.ToString() + ".json", asset, settings);
 
         Debug.Log("save done. FILE: " + saveGameName.text);
 
-        Debug.Log("FILES: " + files[0]);
+
+        files = SaveGame.GetFiles();
+        Debug.Log("UPDATED FILES: " + files.Length);
     }
 }

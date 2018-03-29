@@ -29,18 +29,19 @@ public class GameController : MonoBehaviour {
         //    Destroy(gameObject);
         //}
 
-        if (!created)
-        {
-            DontDestroyOnLoad(this.gameObject);
-            created = true;
-            Debug.Log("Awake ...");
-        }
+        // BEST NOT TO USE IF POSSIBLE
+        //if (!created)
+        //{
+        //    DontDestroyOnLoad(this.gameObject);
+        //    created = true;
+        //    Debug.Log("Awake ...");
+        //}
 
     }
 
     // Use this for initialization
     void Start () {
-
+        Debug.Log("STARTING GC");
     }
 
     // Update is called once per frame (FixedUpdate called on a regular timeline and called every physics step. )
@@ -55,5 +56,11 @@ public class GameController : MonoBehaviour {
     public void SetPlayerName(string name)
     {
         playerName = name;
+    }
+
+    public void ChangeScenes(string scene)
+    {
+        // keep _GameManagerScene + scene going. Dump others.
+        // TODO: maybe this is bad. What if I wanted many scenes going. Perhaps a scene should just manage itself and unload when needed? How?
     }
 }

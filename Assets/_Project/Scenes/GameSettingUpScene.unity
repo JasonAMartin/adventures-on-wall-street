@@ -263,11 +263,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1099527043}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc057eec3e639814881050dc12536a39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerName: 
 --- !u!224 &1457115944 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224098414243492204, guid: 8de9a7dc1ecaa5f41af675d27fae73ee,

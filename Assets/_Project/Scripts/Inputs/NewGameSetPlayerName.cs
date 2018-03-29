@@ -20,10 +20,13 @@ public class NewGameSetPlayerName : MonoBehaviour {
     public void StartNewGame()
     {
         // Save player name where??? newPlayerName.text
-        GameController.instance.playerName = newPlayerName.text;
+        gameController = GameObject.FindObjectOfType<GameController>();
+        gameController.SetPlayerName(newPlayerName.text);
+
+
         Debug.Log("player: " + newPlayerName.text);
 
         // switch to Game Setting Up Scene
-        SceneManager.LoadScene("GameSettingUpScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("GameSettingUpScene", LoadSceneMode.Additive);
     }
 }

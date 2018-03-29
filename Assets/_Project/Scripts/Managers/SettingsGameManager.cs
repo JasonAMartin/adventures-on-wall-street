@@ -15,9 +15,15 @@ public class SettingsGameManager
 
 
         ///SaveGame.Save("demo.json", files, settings);
-        SceneManager.LoadScene("SettingsScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("SettingsScene", LoadSceneMode.Additive);
 
         Debug.Log("settings done");
 
+    }
+
+
+    public void UnloadScene()
+    {
+        SceneManager.UnloadSceneAsync("SettingsScene");
     }
 }
