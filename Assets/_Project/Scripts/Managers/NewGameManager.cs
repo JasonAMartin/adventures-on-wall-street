@@ -35,6 +35,11 @@ public class NewGameManager
 
     }
 
+    public void UnloadScene()
+    {
+        SceneManager.UnloadSceneAsync("NewGameSetupScene");
+    }
+
 
 #if UNITY_EDITOR
     bool ifScene_CurrentlyLoaded_inEditor(string sceneName_no_extention)

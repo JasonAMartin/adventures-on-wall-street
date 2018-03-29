@@ -26,7 +26,14 @@ public class NewGameSetPlayerName : MonoBehaviour {
 
         Debug.Log("player: " + newPlayerName.text);
 
-        // switch to Game Setting Up Scene
-        SceneManager.LoadScene("GameSettingUpScene", LoadSceneMode.Additive);
+        // Switch off mainmenucanvas and switch on gamesettingupcanvas
+        GameObject canvasMainMenu = GameObject.Find("MainMenuCanvas");
+        GameObject canvasGameSetup = GameObject.Find("GameSetupCanvas");
+
+        SceneManager.UnloadSceneAsync("NewGameSetupScene");
+        canvasMainMenu.SetActive(false);
+        canvasGameSetup.SetActive(true);
+       
+        // SceneManager.LoadScene("GameSettingUpScene", LoadSceneMode.Additive);
     }
 }
