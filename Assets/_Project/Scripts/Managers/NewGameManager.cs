@@ -15,7 +15,7 @@ public class NewGameManager
 
 
         ///SaveGame.Save("demo.json", files, settings);
-        SceneManager.LoadScene("GameSettingUpScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("NewGameSetupScene", LoadSceneMode.Single);
 
         Debug.Log("setup done");
 
