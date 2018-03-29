@@ -7,6 +7,7 @@ using System.IO;
 
 public class SaveGameName : MonoBehaviour {
     public InputField saveGameName;
+    public SaveGameManager saveGameManager;
 	// Use this for initialization
 	void Start () {
       //  saveGameName.placeholder = "Enter your save game name here ...";	

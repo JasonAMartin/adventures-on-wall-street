@@ -929,6 +929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc057eec3e639814881050dc12536a39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerName: 
 --- !u!1001 &1219550461
 Prefab:
   m_ObjectHideFlags: 0
@@ -974,7 +975,7 @@ Prefab:
     - target: {fileID: 224098414243492204, guid: 8de9a7dc1ecaa5f41af675d27fae73ee,
         type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224098414243492204, guid: 8de9a7dc1ecaa5f41af675d27fae73ee,
         type: 2}

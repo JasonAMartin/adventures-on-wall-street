@@ -7,6 +7,11 @@ public class SaveGameManager {
 
     public void SaveGameFile()
     {
-        SceneManager.LoadScene("SaveGameScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("SaveGameScene", LoadSceneMode.Additive);
+    }
+
+    public void UnloadSaveScene()
+    {
+        SceneManager.UnloadSceneAsync("SaveGameScene");
     }
 }

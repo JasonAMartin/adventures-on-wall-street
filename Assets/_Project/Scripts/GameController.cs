@@ -7,7 +7,8 @@ public class GameController : MonoBehaviour {
     public static GameController controller;
     List<string> actionLog = new List<string>(); // this is for log of what's happened. Break it out to component?
     private static bool created = false;
-   
+    public string playerName;
+    public static GameController instance;
 
     private void Awake()
     {
@@ -49,5 +50,10 @@ public class GameController : MonoBehaviour {
     public void AddToHistoryLog(string history)
     {
         actionLog.Add(history);
+    }
+
+    public void SetPlayerName(string name)
+    {
+        playerName = name;
     }
 }

@@ -215,6 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newPlayerName: {fileID: 1111770857}
+  gameController: {fileID: 2109434039}
 --- !u!4 &236229072
 Transform:
   m_ObjectHideFlags: 0
@@ -877,6 +878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newPlayerName: {fileID: 1111770857}
+  gameController: {fileID: 0}
 --- !u!1 &1322366960
 GameObject:
   m_ObjectHideFlags: 0

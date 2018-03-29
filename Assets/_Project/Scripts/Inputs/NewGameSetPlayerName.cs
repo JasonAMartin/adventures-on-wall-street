@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class NewGameSetPlayerName : MonoBehaviour {
     public InputField newPlayerName;
+    public GameController gameController;
 	// Use this for initialization
 	void Start () {
       //  saveGameName.placeholder = "Enter your save game name here ...";	
@@ -18,7 +19,9 @@ public class NewGameSetPlayerName : MonoBehaviour {
 
     public void StartNewGame()
     {
-        // Save player name where???
+        // Save player name where??? newPlayerName.text
+        GameController.instance.playerName = newPlayerName.text;
+        Debug.Log("player: " + newPlayerName.text);
 
         // switch to Game Setting Up Scene
         SceneManager.LoadScene("GameSettingUpScene", LoadSceneMode.Single);
