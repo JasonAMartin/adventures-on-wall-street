@@ -8,9 +8,9 @@ public class ExampleScript : MonoBehaviour {
     public Button myButton;
 	// Use this for initialization
 	void Start () {
-       // Button btn = myButton.GetComponent<Button>();
-       // btn.onClick.AddListener(TaskOnClick);
-
+        // Button btn = myButton.GetComponent<Button>();
+        // btn.onClick.AddListener(TaskOnClick);
+        setData();
     }
 	
 	// Update is called once per frame
@@ -21,5 +21,15 @@ public class ExampleScript : MonoBehaviour {
     void TaskOnClick()
     {
         print("The player's name is: " + PlayerName);
+    }
+
+    private void OnMouseDown()
+    {
+        Debug.Log("hi....");
+    }
+
+    public string setData()
+    {
+        return "JASON IS HERE";
     }
 }

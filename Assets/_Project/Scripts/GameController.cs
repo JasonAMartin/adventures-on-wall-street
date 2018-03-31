@@ -6,9 +6,10 @@ public class GameController : MonoBehaviour {
 
     public static GameController controller;
     List<string> actionLog = new List<string>(); // this is for log of what's happened. Break it out to component?
-    private static bool created = false;
+   // private static bool created = false;
     public string playerName;
     public static GameController instance;
+    GameDataBlueprint gameDataBlueprint = new GameDataBlueprint();
 
     private void Awake()
     {
@@ -55,12 +56,27 @@ public class GameController : MonoBehaviour {
 
     public void SetPlayerName(string name)
     {
-        playerName = name;
+        gameDataBlueprint.playerName = name;
     }
 
     public void ChangeScenes(string scene)
     {
         // keep _GameManagerScene + scene going. Dump others.
         // TODO: maybe this is bad. What if I wanted many scenes going. Perhaps a scene should just manage itself and unload when needed? How?
+    }
+
+    public void SetCEOList(List<CEO> ceoList)
+    {
+        gameDataBlueprint.ceoList = ceoList;
+    }
+
+    public void SetPlayerCapital(int capital)
+    {
+        gameDataBlueprint.playerCapital = capital;
+    }
+
+    public GameDataBlueprint GetGameDataBlueprint()
+    {
+        return gameDataBlueprint;
     }
 }
