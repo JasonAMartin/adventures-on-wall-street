@@ -43,14 +43,14 @@ public class SaveGameName : MonoBehaviour {
         gameController.SetPlayerCapital(9933);
 
         SaveGameSettings settings = SaveGame.DefaultSettings;
-        settings.Formatter = new BayatGames.SaveGamePro.Serialization.Formatters.Json.JsonFormatter();
+        settings.Formatter = new BayatGames.SaveGamePro.Serialization.Formatters.Binary.BinaryFormatter();
         settings.Storage = new BayatGames.SaveGamePro.IO.SaveGameFileStorage();
         SaveGame.DefaultSettings = settings;
 
 
         FileInfo[] files = SaveGame.GetFiles();
         Debug.Log("FILES: " + files.Length);
-        SaveGame.Save(saveGameName.text.ToString() + ".json", gameController.GetGameDataBlueprint(), settings);
+        SaveGame.Save(saveGameName.text.ToString(), gameController.GetGameDataBlueprint(), settings);
 
         Debug.Log("save done. FILE: " + saveGameName.text);
 

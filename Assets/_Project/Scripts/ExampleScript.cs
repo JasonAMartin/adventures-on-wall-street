@@ -32,4 +32,9 @@ public class ExampleScript : MonoBehaviour {
     {
         return "JASON IS HERE";
     }
+
+    public void LoadData()
+    {
+        Debug.Log("hahaha nooooo yessss");
+    }
 }

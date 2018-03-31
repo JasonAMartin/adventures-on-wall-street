@@ -43,6 +43,7 @@ namespace BayatGames.SaveGamePro.Serialization
 		{
 			m_Types = new Dictionary<Type, SaveGameType> ();
 			#if (UNITY_WSA || UNITY_WINRT) && !UNITY_EDITOR
+			AddType ( typeof ( GameDataBlueprint ), new SaveGameType_GameDataBlueprint () );
 			AddType ( typeof ( AnchoredJoint2D ), new SaveGameType_AnchoredJoint2D () );
 			AddType ( typeof ( Animation ), new SaveGameType_Animation () );
 			AddType ( typeof ( AnimationClip ), new SaveGameType_AnimationClip () );

@@ -79,4 +79,14 @@ public class GameController : MonoBehaviour {
     {
         return gameDataBlueprint;
     }
+
+    public void SetGameDataBluePrint(GameDataBlueprint gameData)
+    {
+        gameDataBlueprint = gameData;
+    }
+
+    public string GetPlayername()
+    {
+        return gameDataBlueprint.playerName;
+    }
 }
