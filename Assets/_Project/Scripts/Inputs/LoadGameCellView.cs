@@ -20,7 +20,13 @@ public class LoadGameCellView : EnhancedScrollerCellView
 
     public void ClickMe()
     {
-        Debug.Log("I am clicked -> " + EventSystem.current.currentSelectedGameObject.name);
+        var colors = this.GetComponent<Button>().colors;
+        colors.normalColor = Color.yellow;
+        this.GetComponent<Button>().colors = colors;
+
+        LoadGameButton loadButton = GameObject.Find("LoadGameButton").GetComponent<LoadGameButton>();
+        loadButton.gameSaveName = EventSystem.current.currentSelectedGameObject.name;
+        Debug.Log("I am 2clicked -> " + EventSystem.current.currentSelectedGameObject.name);
     }
 
 }

@@ -158,7 +158,7 @@ Prefab:
     - target: {fileID: 224710224196107466, guid: f6dc970ebf1b838449e961cc450e2a67,
         type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224710224196107466, guid: f6dc970ebf1b838449e961cc450e2a67,
         type: 2}
@@ -503,111 +503,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &424568305
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1833459294}
-    m_Modifications:
-    - target: {fileID: 224098414243492204, guid: 8de9a7dc1ecaa5f41af675d27fae73ee,
-        type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224098414243492204, guid: 8de9a7dc1ecaa5f41af675d27fae73ee,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224098414243492204, guid: 8de9a7dc1ecaa5f41af675d27fae73ee,
-        type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224098414243492204, guid: 8de9a7dc1ecaa5f41af675d27fae73ee,
-        type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224098414243492204, guid: 8de9a7dc1ecaa5f41af675d27fae73ee,
-        type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224098414243492204, guid: 8de9a7dc1ecaa5f41af675d27fae73ee,
-        type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224098414243492204, guid: 8de9a7dc1ecaa5f41af675d27fae73ee,
-        type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224098414243492204, guid: 8de9a7dc1ecaa5f41af675d27fae73ee,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224098414243492204, guid: 8de9a7dc1ecaa5f41af675d27fae73ee,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 427
-      objectReference: {fileID: 0}
-    - target: {fileID: 224098414243492204, guid: 8de9a7dc1ecaa5f41af675d27fae73ee,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 263
-      objectReference: {fileID: 0}
-    - target: {fileID: 224098414243492204, guid: 8de9a7dc1ecaa5f41af675d27fae73ee,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 160
-      objectReference: {fileID: 0}
-    - target: {fileID: 224098414243492204, guid: 8de9a7dc1ecaa5f41af675d27fae73ee,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 224098414243492204, guid: 8de9a7dc1ecaa5f41af675d27fae73ee,
-        type: 2}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224098414243492204, guid: 8de9a7dc1ecaa5f41af675d27fae73ee,
-        type: 2}
-      propertyPath: m_AnchorMin.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224098414243492204, guid: 8de9a7dc1ecaa5f41af675d27fae73ee,
-        type: 2}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224098414243492204, guid: 8de9a7dc1ecaa5f41af675d27fae73ee,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224098414243492204, guid: 8de9a7dc1ecaa5f41af675d27fae73ee,
-        type: 2}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224098414243492204, guid: 8de9a7dc1ecaa5f41af675d27fae73ee,
-        type: 2}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 8de9a7dc1ecaa5f41af675d27fae73ee, type: 2}
-  m_IsPrefabParent: 0
---- !u!224 &550634429 stripped
-RectTransform:
-  m_PrefabParentObject: {fileID: 224098414243492204, guid: 8de9a7dc1ecaa5f41af675d27fae73ee,
-    type: 2}
-  m_PrefabInternal: {fileID: 424568305}
 --- !u!1001 &849629256
 Prefab:
   m_ObjectHideFlags: 0
@@ -791,7 +686,7 @@ GameObject:
   - component: {fileID: 1094128171}
   - component: {fileID: 1094128170}
   m_Layer: 0
-  m_Name: Button
+  m_Name: LoadGameButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -824,10 +719,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1094128168}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87d36e89e8c5487409d3e5d03c9df88c, type: 3}
+  m_Script: {fileID: 11500000, guid: df4c0c51fd8ca0048aa3a0db8267bb15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   yourButton: {fileID: 1094128171}
+  gameController: {fileID: 0}
+  gameSaveName: 
 --- !u!114 &1094128171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1064,7 +961,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1439420430}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1455,7 +1352,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: LOAD ME
+  m_Text: LOAD GAME
 --- !u!222 &1799343270
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1487,14 +1384,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 550634429}
   - {fileID: 1678195475}
   m_Father: {fileID: 1110700183}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00003792881, y: 0.00006655149}
+  m_AnchoredPosition: {x: 0.000065893444, y: 0.00004122641}
   m_SizeDelta: {x: 766.7, y: 552.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2082452490
