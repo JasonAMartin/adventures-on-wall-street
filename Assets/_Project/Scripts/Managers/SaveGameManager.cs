@@ -7,7 +7,8 @@ public class SaveGameManager {
 
     public void SaveGameFile()
     {
-        SceneManager.LoadScene("SaveGameScene", LoadSceneMode.Additive);
+        GameController gameController = GameObject.FindObjectOfType<GameController>();
+        gameController.HideAllCanvas(gameController.canvasSaveGame);
     }
 
     public void UnloadSaveScene()

@@ -17,7 +17,12 @@ public class GameController : MonoBehaviour {
     public CEOList ceos;
     public CompanyList companies;
     public Player player;
-
+    public GameObject canvasMainMenu;
+    public GameObject canvasGame;
+    public GameObject canvasGameSetup;
+    public GameObject canvasSaveGame;
+    public GameObject canvasLoadGame;
+    public GameObject canvasNewGame;
 
     private void Awake() { }
 
@@ -25,6 +30,24 @@ public class GameController : MonoBehaviour {
     void Start() {
         currentGameState = GameStates.PENDING;
         // CEOS = Resources.Load<CEO>("ScriptableObjects/CEOs");
+        canvasMainMenu = GameObject.Find("MainMenuCanvas");
+        canvasGame = GameObject.Find("GameCanvas");
+        canvasGameSetup = GameObject.Find("GameSetupCanvas");
+        canvasSaveGame = GameObject.Find("SaveGameCanvas");
+        canvasLoadGame = GameObject.Find("LoadGameCanvas");
+        canvasNewGame = GameObject.Find("NewGameCanvas");
+        HideAllCanvas(canvasMainMenu);
+    }
+
+    public void HideAllCanvas(GameObject excludeCanvas)
+    {
+        canvasMainMenu.SetActive(false);
+        canvasGame.SetActive(false);
+        canvasGameSetup.SetActive(false);
+        canvasSaveGame.SetActive(false);
+        canvasLoadGame.SetActive(false);
+        canvasNewGame.SetActive(false);
+        if (excludeCanvas) excludeCanvas.SetActive(true);
     }
 
     // Update is called once per frame (FixedUpdate called on a regular timeline and called every physics step. )
@@ -61,9 +84,6 @@ public class GameController : MonoBehaviour {
         Debug.Log("CEO List count: " + ceos.ceoList.Count);
         Debug.Log("Company List count: " + companies.companyList.Count);
         currentGameState = GameStates.GAME_READY;
-        SceneManager.LoadScene("SaveGameScene", LoadSceneMode.Additive);
         Debug.Log("Trying to unload.");
-        SceneManager.UnloadSceneAsync("GameSettingUpScene");
-
     }
 }

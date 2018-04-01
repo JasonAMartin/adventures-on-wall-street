@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class LoadGameManager
 {
-
     public void LoadGameFile()
     {
         //SaveGameSettings settings = SaveGame.DefaultSettings;
@@ -17,9 +16,10 @@ public class LoadGameManager
 
 
         ///SaveGame.Save("demo.json", files, settings);
-        SceneManager.LoadSceneAsync("LoadGameScene", LoadSceneMode.Additive);
+        // SceneManager.LoadSceneAsync("LoadGameScene", LoadSceneMode.Additive);
         Debug.Log("load done");
-
+        GameController gameController = GameObject.FindObjectOfType<GameController>();
+        gameController.HideAllCanvas(gameController.canvasLoadGame);
     }
 
     public void UnloadScene()

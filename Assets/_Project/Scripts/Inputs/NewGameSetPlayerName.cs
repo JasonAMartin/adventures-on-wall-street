@@ -19,11 +19,19 @@ public class NewGameSetPlayerName : MonoBehaviour {
 
     public void StartNewGame()
     {
-        SceneManager.LoadScene("GameSettingUpScene", LoadSceneMode.Additive);
+
+
+        GameObject canvasMainMenu = GameObject.Find("MainMenuCanvas");
+        GameObject canvasGameSetup = GameObject.Find("GameSetupCanvas");
+        canvasMainMenu.SetActive(false);
+        canvasGameSetup.SetActive(true);
         // Save player name where??? newPlayerName.text
         gameController = GameObject.FindObjectOfType<GameController>();
         gameController.currentGameState = GameController.GameStates.NEW_GAME;
         gameController.SetupNewGame(newPlayerName.text);
+
+      
+
 
         /*
          * a way to canvas switch if needed later
@@ -38,7 +46,6 @@ public class NewGameSetPlayerName : MonoBehaviour {
        
         // SceneManager.LoadScene("GameSettingUpScene", LoadSceneMode.Additive);
         */
-        SceneManager.UnloadSceneAsync("NewGameSetupScene");
-        SceneManager.UnloadSceneAsync("TitleScene");
+    
     }
 }
