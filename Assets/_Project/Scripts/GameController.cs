@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 
@@ -9,7 +10,7 @@ public class GameController : MonoBehaviour {
                                                  // private static bool created = false;
     public static GameController instance;
     public GameDataBlueprint gameDataBlueprint = new GameDataBlueprint();
-    public enum GameStates { PENDING, LOAD_GAME, NEW_GAME, GAME_LOADED, SAVE_GAME, GAME_SAVED };
+    public enum GameStates { PENDING, LOAD_GAME, NEW_GAME, GAME_LOADED, SAVE_GAME, GAME_SAVED, GAME_READY };
     public GameStates currentGameState;
 
     // Scriptable Object Data
@@ -24,7 +25,6 @@ public class GameController : MonoBehaviour {
     void Start() {
         currentGameState = GameStates.PENDING;
         // CEOS = Resources.Load<CEO>("ScriptableObjects/CEOs");
-        SetupNewGame();
     }
 
     // Update is called once per frame (FixedUpdate called on a regular timeline and called every physics step. )
@@ -52,12 +52,18 @@ public class GameController : MonoBehaviour {
         gameDataBlueprint = gameData;
     }
 
-    public void SetupNewGame()
+    public void SetupNewGame(string playerName)
     {
         gameDataBlueprint.player = player;
+        gameDataBlueprint.player.playerName = playerName;
         gameDataBlueprint.companyList = companies.companyList;
         gameDataBlueprint.ceoList = ceos.ceoList;
         Debug.Log("CEO List count: " + ceos.ceoList.Count);
         Debug.Log("Company List count: " + companies.companyList.Count);
+        currentGameState = GameStates.GAME_READY;
+        SceneManager.LoadScene("SaveGameScene", LoadSceneMode.Additive);
+        Debug.Log("Trying to unload.");
+        SceneManager.UnloadSceneAsync("GameSettingUpScene");
+
     }
 }
