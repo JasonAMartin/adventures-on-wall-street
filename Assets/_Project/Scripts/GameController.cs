@@ -13,8 +13,9 @@ public class GameController : MonoBehaviour {
     public GameStates currentGameState;
 
     // Scriptable Object Data
-    public List<CEO> ceos;
-    public List<Company> companies;
+    public CEOList ceos;
+    public CompanyList companies;
+    public Player player;
 
 
     private void Awake() { }
@@ -23,6 +24,7 @@ public class GameController : MonoBehaviour {
     void Start() {
         currentGameState = GameStates.PENDING;
         // CEOS = Resources.Load<CEO>("ScriptableObjects/CEOs");
+        SetupNewGame();
     }
 
     // Update is called once per frame (FixedUpdate called on a regular timeline and called every physics step. )
@@ -52,6 +54,10 @@ public class GameController : MonoBehaviour {
 
     public void SetupNewGame()
     {
-
+        gameDataBlueprint.player = player;
+        gameDataBlueprint.companyList = companies.companyList;
+        gameDataBlueprint.ceoList = ceos.ceoList;
+        Debug.Log("CEO List count: " + ceos.ceoList.Count);
+        Debug.Log("Company List count: " + companies.companyList.Count);
     }
 }

@@ -17,9 +17,7 @@ public class GameDataBlueprint
     public string gameSaveFile;
 
     // Player Data
-    public string playerName;
-    public int playerCapital;
-    public int playerScore;
+    public Player player;
 
     // Get/Set Methods
 
@@ -33,6 +31,19 @@ public class GameDataBlueprint
         set
         {
             ceoLevel = value;
+        }
+    }
+
+    public Player Player
+    {
+        get
+        {
+            return player;
+        }
+
+        set
+        {
+            player = value;
         }
     }
 
@@ -114,43 +125,21 @@ public class GameDataBlueprint
         }
     }
 
-    public string PlayerName
-    {
-        get
-        {
-            return playerName;
-        }
-
-        set
-        {
-            playerName = value;
-        }
-    }
-
-    public int PlayerCapital
-    {
-        get
-        {
-            return playerCapital;
-        }
-
-        set
-        {
-            playerCapital = value;
-        }
-    }
-
-    public int PlayerScore
-    {
-        get
-        {
-            return playerScore;
-        }
-
-        set
-        {
-            playerScore = value;
-        }
-    }
-
+    // TODO make these get/sets below like ones above!! meh, wrong???
+    /*
+     *
+     * Think this error is because I'm attaching Player to GameController. Since it's now a SO, it should be handled like others.
+     * 
+     * In the SaveGameType, it's reading name, capital and score like 3 things. This needs to be converted to 1 SO object and this should fix it.
+     * 
+     * case "playerName":
+						gameDataBlueprint.SetPlayerName(reader.ReadProperty<System.String> ());
+						break;
+					case "playerCapital":
+						gameDataBlueprint.SetPlayerCapital(reader.ReadProperty<System.Int32> ());
+						break;
+					case "playerScore":
+						gameDataBlueprint.SetPlayerScore(reader.ReadProperty<System.Int32> ());
+						break;
+     */
 }

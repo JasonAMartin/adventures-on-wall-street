@@ -21,7 +21,7 @@ public class NewGameSetPlayerName : MonoBehaviour {
     {
         // Save player name where??? newPlayerName.text
         gameController = GameObject.FindObjectOfType<GameController>();
-        gameController.gameDataBlueprint.PlayerName = newPlayerName.text;
+        gameController.gameDataBlueprint.player.playerName = newPlayerName.text;
 
 
         Debug.Log("player: " + newPlayerName.text);

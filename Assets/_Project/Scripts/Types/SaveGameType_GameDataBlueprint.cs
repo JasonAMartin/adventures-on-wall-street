@@ -38,9 +38,7 @@ namespace BayatGames.SaveGamePro.Serialization.Types
 			writer.WriteProperty ( "npcList", gameDataBlueprint.npcList );
 			writer.WriteProperty ( "gameDifficulty", gameDataBlueprint.gameDifficulty );
 			writer.WriteProperty ( "daysPlayed", gameDataBlueprint.daysPlayed );
-			writer.WriteProperty ( "playerName", gameDataBlueprint.playerName );
-			writer.WriteProperty ( "playerCapital", gameDataBlueprint.playerCapital );
-			writer.WriteProperty ( "playerScore", gameDataBlueprint.playerScore );
+			writer.WriteProperty ( "player", gameDataBlueprint.player);
 		}
 
 		/// <summary>
@@ -98,15 +96,17 @@ namespace BayatGames.SaveGamePro.Serialization.Types
 					case "daysPlayed":
 						gameDataBlueprint.daysPlayed = reader.ReadProperty<System.Int32> ();
 						break;
-					case "playerName":
-						gameDataBlueprint.playerName = reader.ReadProperty<System.String> ();
-						break;
-					case "playerCapital":
-						gameDataBlueprint.playerCapital = reader.ReadProperty<System.Int32> ();
-						break;
-					case "playerScore":
-						gameDataBlueprint.playerScore = reader.ReadProperty<System.Int32> ();
-						break;
+
+                    case "player":
+                        if (gameDataBlueprint.player == null)
+                        {
+                            gameDataBlueprint.player = reader.ReadProperty<Player>();
+                        }
+                        else
+                        {
+                            reader.ReadIntoProperty<Player>(gameDataBlueprint.player);
+                        }
+                        break;
 				}
 			}
 		}

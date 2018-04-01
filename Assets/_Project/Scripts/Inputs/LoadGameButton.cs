@@ -22,11 +22,11 @@ public class LoadGameButton : MonoBehaviour {
         Debug.Log("game save is: " + gameSaveName);
         GameDataBlueprint temp = new GameDataBlueprint();
         gameController = GameObject.FindObjectOfType<GameController>();
-        Debug.Log("name first: " + gameController.gameDataBlueprint.PlayerName);
+        Debug.Log("name first: " + gameController.gameDataBlueprint.player.playerName);
         SaveGame.LoadInto<GameDataBlueprint>(gameSaveName, temp);
         gameController.SetGameDataBluePrint(temp);
         Debug.Log("You have clicked the button!");
-        Debug.Log("name now: " + gameController.gameDataBlueprint.PlayerName);
+        Debug.Log("name now: " + gameController.gameDataBlueprint.player.playerName);
         gameController.gameDataBlueprint.GameSaveFile = gameSaveName;
         gameController.currentGameState = GameController.GameStates.LOAD_GAME;
         Debug.Log("Testing game name: " + gameController.gameDataBlueprint.GameSaveFile);

@@ -27,23 +27,9 @@ public class SaveGameName : MonoBehaviour {
 
        //  GameDataBlueprint saveGameFile = new GameDataBlueprint();
 
-        CEO ceo = ScriptableObject.CreateInstance<CEO>();
-        CEO ceo2 = ScriptableObject.CreateInstance<CEO>();
-        List<CEO> ceoList = new List<CEO>();
-
-     
-        ceo.firstName = "hahah";
-        ceo2.firstName = "cool";
-
-        ceoList.Add(ceo);
-        ceoList.Add(ceo2);
-
-        gameController.gameDataBlueprint.CEOList = ceoList;
-        gameController.gameDataBlueprint.PlayerName = "Demo Me PLayer 2";
-        gameController.gameDataBlueprint.PlayerCapital = 9933;
-
+        
         SaveGameSettings settings = SaveGame.DefaultSettings;
-        settings.Formatter = new BayatGames.SaveGamePro.Serialization.Formatters.Binary.BinaryFormatter();
+        settings.Formatter = new BayatGames.SaveGamePro.Serialization.Formatters.Json.JsonFormatter();
         settings.Storage = new BayatGames.SaveGamePro.IO.SaveGameFileStorage();
         SaveGame.DefaultSettings = settings;
 
