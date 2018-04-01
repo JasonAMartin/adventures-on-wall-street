@@ -12,6 +12,8 @@ public class Company : ScriptableObject
     public int earliestStartingDay;
     public CompanyLevel companyStrength;
     public string companyDescription;
-    public bool inBusiness = true;
+    public bool canBeUsed = true;
+    public bool wentBankrupt = false;
+    public bool isBeingUsed = false;
     public CEO ceo;
 }
