@@ -38,9 +38,9 @@ public class SaveGameName : MonoBehaviour {
         ceoList.Add(ceo);
         ceoList.Add(ceo2);
 
-        gameController.SetCEOList(ceoList);
-        gameController.SetPlayerName("Demo Me PLayer 2");
-        gameController.SetPlayerCapital(9933);
+        gameController.gameDataBlueprint.CEOList = ceoList;
+        gameController.gameDataBlueprint.PlayerName = "Demo Me PLayer 2";
+        gameController.gameDataBlueprint.PlayerCapital = 9933;
 
         SaveGameSettings settings = SaveGame.DefaultSettings;
         settings.Formatter = new BayatGames.SaveGamePro.Serialization.Formatters.Binary.BinaryFormatter();

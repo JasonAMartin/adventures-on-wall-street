@@ -210,41 +210,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114469950312531460, guid: f6dc970ebf1b838449e961cc450e2a67,
-        type: 2}
-      propertyPath: cellIdentifier
-      value: Load Game Cell View
-      objectReference: {fileID: 0}
-    - target: {fileID: 114479816932202352, guid: f6dc970ebf1b838449e961cc450e2a67,
-        type: 2}
-      propertyPath: m_Colors.m_HighlightedColor.r
-      value: 0.72988755
-      objectReference: {fileID: 0}
-    - target: {fileID: 114479816932202352, guid: f6dc970ebf1b838449e961cc450e2a67,
-        type: 2}
-      propertyPath: m_Colors.m_HighlightedColor.g
-      value: 0.99264705
-      objectReference: {fileID: 0}
-    - target: {fileID: 114479816932202352, guid: f6dc970ebf1b838449e961cc450e2a67,
-        type: 2}
-      propertyPath: m_Colors.m_HighlightedColor.b
-      value: 0.7860637
-      objectReference: {fileID: 0}
-    - target: {fileID: 114479816932202352, guid: f6dc970ebf1b838449e961cc450e2a67,
-        type: 2}
-      propertyPath: m_Colors.m_PressedColor.r
-      value: 0.7794118
-      objectReference: {fileID: 0}
-    - target: {fileID: 114479816932202352, guid: f6dc970ebf1b838449e961cc450e2a67,
-        type: 2}
-      propertyPath: m_Colors.m_PressedColor.g
-      value: 0.19485295
-      objectReference: {fileID: 0}
-    - target: {fileID: 114479816932202352, guid: f6dc970ebf1b838449e961cc450e2a67,
-        type: 2}
-      propertyPath: m_Colors.m_PressedColor.b
-      value: 0.19485295
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f6dc970ebf1b838449e961cc450e2a67, type: 2}
   m_IsPrefabParent: 0
@@ -941,7 +906,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.86764705, g: 0.11483564, b: 0.11483564, a: 1}
+    m_NormalColor: {r: 0.23348126, g: 0.20680147, b: 0.375, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -960,7 +925,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1439420431}
   m_HandleRect: {fileID: 1439420430}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1390,7 +1355,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000065893444, y: 0.00004122641}
+  m_AnchoredPosition: {x: 0.000065893444, y: -0.000019323015}
   m_SizeDelta: {x: 766.7, y: 552.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2082452490

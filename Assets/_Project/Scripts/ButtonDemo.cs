@@ -19,10 +19,10 @@ public class ButtonDemo : MonoBehaviour
     {
         GameDataBlueprint temp = new GameDataBlueprint();
         gameController = GameObject.FindObjectOfType<GameController>();
-        Debug.Log("name first: " + gameController.GetPlayername());
+        Debug.Log("name first: " + gameController.gameDataBlueprint.PlayerName);
         SaveGame.LoadInto<GameDataBlueprint>("zzz", temp);
         gameController.SetGameDataBluePrint(temp);
         Debug.Log("You have clicked the button!");
-        Debug.Log("name now: " + gameController.GetPlayername());
+        Debug.Log("name now: " + gameController.gameDataBlueprint.PlayerName);
     }
 }

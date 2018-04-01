@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114479816932202352}
   m_Layer: 0
   m_Name: LoadGameCellView
-  m_TagString: Untagged
+  m_TagString: SavedGamesListItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,8 +120,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cellIdentifier: Load Game Cell View
   displayText: {fileID: 114158607224171298}
-  savedGameName: {fileID: 0}
-  savedGameFullPath: {fileID: 0}
 --- !u!114 &114479816932202352
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,9 +139,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.6082389, g: 0.19528547, b: 0.63235295, a: 1}
-    m_PressedColor: {r: 0.6737562, g: 0.88235295, b: 0.4736159, a: 1}
+    m_NormalColor: {r: 0.7647059, g: 0.7647059, b: 0.7647059, a: 1}
+    m_HighlightedColor: {r: 0.44852942, g: 0.81744415, b: 1, a: 1}
+    m_PressedColor: {r: 1, g: 0.76551723, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
