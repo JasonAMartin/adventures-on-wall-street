@@ -140,7 +140,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc057eec3e639814881050dc12536a39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerName: 
+  currentGameState: 0
+  ceos: []
+  companies: []
 --- !u!4 &222127003
 Transform:
   m_ObjectHideFlags: 0
@@ -247,4 +249,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc057eec3e639814881050dc12536a39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerName: 
+  currentGameState: 0
+  ceos: []
+  companies: []
