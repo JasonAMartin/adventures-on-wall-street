@@ -20,13 +20,8 @@ public class NewGameSetPlayerName : MonoBehaviour {
     public void StartNewGame()
     {
 
-
-        GameObject canvasMainMenu = GameObject.Find("MainMenuCanvas");
-        GameObject canvasGameSetup = GameObject.Find("GameSetupCanvas");
-        canvasMainMenu.SetActive(false);
-        canvasGameSetup.SetActive(true);
-        // Save player name where??? newPlayerName.text
-        gameController = GameObject.FindObjectOfType<GameController>();
+        GameController gameController = GameObject.FindObjectOfType<GameController>();
+        gameController.HideAllCanvas(gameController.canvasGameSetup);
         gameController.currentGameState = GameController.GameStates.NEW_GAME;
         gameController.SetupNewGame(newPlayerName.text);
 

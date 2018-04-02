@@ -24,7 +24,6 @@ public class SaveGameName : MonoBehaviour {
     {
 
         gameController = GameObject.FindObjectOfType<GameController>();
-        gameController.SetupNewGame("fresh");
 
        //  GameDataBlueprint saveGameFile = new GameDataBlueprint();
 

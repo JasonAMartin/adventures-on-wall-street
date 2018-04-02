@@ -8,7 +8,8 @@ public class NewGameManager
 
     public void NewGameSetup()
     {
-
+        GameController gameController = GameObject.FindObjectOfType<GameController>();
+        gameController.HideAllCanvas(gameController.canvasNewGame);
 
 
         //SaveGameSettings settings = SaveGame.DefaultSettings;
@@ -18,28 +19,23 @@ public class NewGameManager
 
 
         ///SaveGame.Save("demo.json", files, settings);
-        
 
 
-        if (!ifScene_CurrentlyLoaded_inEditor("NewGameSetupScene") && !isScene_CurrentlyLoaded("NewGameSetupScene"))
-        {
-            Debug.Log("1st load???? " + ifScene_CurrentlyLoaded_inEditor("NewGameSetupScene"));
-            SceneManager.LoadScene("NewGameSetupScene", LoadSceneMode.Additive);
-        } else
-        {
-            Debug.Log("Hi ---");
-        }
+
+        //if (!ifScene_CurrentlyLoaded_inEditor("NewGameSetupScene") && !isScene_CurrentlyLoaded("NewGameSetupScene"))
+        //{
+        //    Debug.Log("1st load???? " + ifScene_CurrentlyLoaded_inEditor("NewGameSetupScene"));
+        //    SceneManager.LoadScene("NewGameSetupScene", LoadSceneMode.Additive);
+        //} else
+        //{
+        //    Debug.Log("Hi ---");
+        //}
 
         //       SceneManager.UnloadSceneAsync("TitleScene");
         Debug.Log("setup done");
 
     }
-
-    public void UnloadScene()
-    {
-        SceneManager.UnloadSceneAsync("NewGameSetupScene");
-    }
-
+   
 
 #if UNITY_EDITOR
     bool ifScene_CurrentlyLoaded_inEditor(string sceneName_no_extention)

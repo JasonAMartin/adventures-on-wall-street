@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class StateButtonManager : MonoBehaviour
 {
     public Button buttonName;
-    public enum ButtonType { SAVE, LOAD, NEW, SETTINGS, QUIT, MAINMENU, UNLOADSAVE, UNLOADLOAD, UNLOADSETTINGS, UNLOADNEWGAMESETUP }
+    public enum ButtonType { SAVE, LOAD, NEW, SETTINGS, QUIT, MAINMENU }
     public ButtonType buttonType;
     public InputField saveGameName;
 
@@ -25,22 +25,10 @@ public class StateButtonManager : MonoBehaviour
             loadGameManager.LoadGameFile();
         }
 
-        if (buttonType == ButtonType.UNLOADLOAD)
-        {
-            LoadGameManager loadGameManager = new LoadGameManager();
-            loadGameManager.UnloadScene();
-        }
-
         if (buttonType == ButtonType.SAVE)
         {
             SaveGameManager saveGameManager = new SaveGameManager();
             saveGameManager.SaveGameFile();
-        }
-
-        if (buttonType == ButtonType.UNLOADSAVE)
-        {
-            SaveGameManager saveGameManager = new SaveGameManager();
-            saveGameManager.UnloadSaveScene();
         }
 
         if (buttonType == ButtonType.NEW)
@@ -49,22 +37,10 @@ public class StateButtonManager : MonoBehaviour
             newGameManager.NewGameSetup();
         }
 
-        if (buttonType == ButtonType.UNLOADNEWGAMESETUP)
-        {
-            NewGameManager newGameManager = new NewGameManager();
-            newGameManager.UnloadScene();
-        }
-
         if (buttonType == ButtonType.SETTINGS)
         {
             SettingsGameManager settingsGameManager = new SettingsGameManager();
             settingsGameManager.SettingsSetup();
-        }
-
-        if (buttonType == ButtonType.UNLOADSETTINGS)
-        {
-            SettingsGameManager settingsGameManager = new SettingsGameManager();
-            settingsGameManager.UnloadScene();
         }
 
         if (buttonType == ButtonType.QUIT)
@@ -76,6 +52,7 @@ public class StateButtonManager : MonoBehaviour
 
         if (buttonType == ButtonType.MAINMENU)
         {
+            Debug.Log("Hey hey hey");
             MainMenuManager mainMenuManager = new MainMenuManager();
             mainMenuManager.NavigateToMainMenu();
         }

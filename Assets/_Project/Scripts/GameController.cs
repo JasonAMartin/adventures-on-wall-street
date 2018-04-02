@@ -84,6 +84,6 @@ public class GameController : MonoBehaviour {
         Debug.Log("CEO List count: " + ceos.ceoList.Count);
         Debug.Log("Company List count: " + companies.companyList.Count);
         currentGameState = GameStates.GAME_READY;
-        Debug.Log("Trying to unload.");
+        HideAllCanvas(canvasGame);
     }
 }

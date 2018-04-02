@@ -8,11 +8,7 @@ public class MainMenuManager
 
 	public void NavigateToMainMenu()
     {
-        SceneManager.LoadScene("TitleScene", LoadSceneMode.Additive);
-    }
-
-    public void RemoveScene()
-    {
-        SceneManager.UnloadSceneAsync("TitleScene");
+        GameController gameController = GameObject.FindObjectOfType<GameController>();
+        gameController.HideAllCanvas(gameController.canvasMainMenu);
     }
 }

@@ -144,6 +144,12 @@ MonoBehaviour:
   ceos: {fileID: 11400000, guid: 97aacc125635d2340ae022f991abe1d5, type: 2}
   companies: {fileID: 11400000, guid: 82d51933c632a934a94b72aefab69665, type: 2}
   player: {fileID: 11400000, guid: de54fdbdb8a782c41954357a4db1bff3, type: 2}
+  canvasMainMenu: {fileID: 0}
+  canvasGame: {fileID: 0}
+  canvasGameSetup: {fileID: 0}
+  canvasSaveGame: {fileID: 0}
+  canvasLoadGame: {fileID: 0}
+  canvasNewGame: {fileID: 0}
 --- !u!4 &222127003
 Transform:
   m_ObjectHideFlags: 0
@@ -254,3 +260,9 @@ MonoBehaviour:
   ceos: {fileID: 0}
   companies: {fileID: 0}
   player: {fileID: 0}
+  canvasMainMenu: {fileID: 0}
+  canvasGame: {fileID: 0}
+  canvasGameSetup: {fileID: 0}
+  canvasSaveGame: {fileID: 0}
+  canvasLoadGame: {fileID: 0}
+  canvasNewGame: {fileID: 0}

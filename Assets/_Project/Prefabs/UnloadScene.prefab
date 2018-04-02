@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonName: {fileID: 0}
-  buttonType: 6
+  buttonType: 5
   saveGameName: {fileID: 0}
 --- !u!222 &222759950913622618
 CanvasRenderer:
