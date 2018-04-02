@@ -23,6 +23,7 @@ public class GameController : MonoBehaviour {
     public GameObject canvasSaveGame;
     public GameObject canvasLoadGame;
     public GameObject canvasNewGame;
+    public GameObject canvasSettings;
 
     private void Awake() { }
 
@@ -36,6 +37,7 @@ public class GameController : MonoBehaviour {
         canvasSaveGame = GameObject.Find("SaveGameCanvas");
         canvasLoadGame = GameObject.Find("LoadGameCanvas");
         canvasNewGame = GameObject.Find("NewGameCanvas");
+        canvasSettings = GameObject.Find("SettingsCanvas");
         HideAllCanvas(canvasMainMenu);
     }
 
@@ -84,6 +86,6 @@ public class GameController : MonoBehaviour {
         Debug.Log("CEO List count: " + ceos.ceoList.Count);
         Debug.Log("Company List count: " + companies.companyList.Count);
         currentGameState = GameStates.GAME_READY;
-        HideAllCanvas(canvasGame);
+        HideAllCanvas(canvasSaveGame);
     }
 }

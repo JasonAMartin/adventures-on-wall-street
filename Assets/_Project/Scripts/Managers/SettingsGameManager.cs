@@ -8,6 +8,9 @@ public class SettingsGameManager
 
     public void SettingsSetup()
     {
+
+        GameController gameController = GameObject.FindObjectOfType<GameController>();
+        gameController.HideAllCanvas(gameController.canvasSettings);
         //SaveGameSettings settings = SaveGame.DefaultSettings;
         //settings.Formatter = new BayatGames.SaveGamePro.Serialization.Formatters.Json.JsonFormatter();
         //settings.Storage = new BayatGames.SaveGamePro.IO.SaveGameFileStorage();
@@ -15,15 +18,9 @@ public class SettingsGameManager
 
 
         ///SaveGame.Save("demo.json", files, settings);
-        SceneManager.LoadScene("SettingsScene", LoadSceneMode.Additive);
 
         Debug.Log("settings done");
 
     }
-
-
-    public void UnloadScene()
-    {
-        SceneManager.UnloadSceneAsync("SettingsScene");
-    }
+   
 }

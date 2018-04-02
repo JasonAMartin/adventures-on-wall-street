@@ -29,7 +29,7 @@ public class SaveGameName : MonoBehaviour {
 
         
         SaveGameSettings settings = SaveGame.DefaultSettings;
-        settings.Formatter = new BayatGames.SaveGamePro.Serialization.Formatters.Json.JsonFormatter();
+        settings.Formatter = new BayatGames.SaveGamePro.Serialization.Formatters.Binary.BinaryFormatter();
         settings.Storage = new BayatGames.SaveGamePro.IO.SaveGameFileStorage();
         SaveGame.DefaultSettings = settings;
 

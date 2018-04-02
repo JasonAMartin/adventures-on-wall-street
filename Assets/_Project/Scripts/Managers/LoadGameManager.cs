@@ -21,9 +21,4 @@ public class LoadGameManager
         GameController gameController = GameObject.FindObjectOfType<GameController>();
         gameController.HideAllCanvas(gameController.canvasLoadGame);
     }
-
-    public void UnloadScene()
-    {
-        SceneManager.UnloadSceneAsync("LoadGameScene");
-    }
 }

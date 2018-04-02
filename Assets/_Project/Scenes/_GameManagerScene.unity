@@ -150,6 +150,7 @@ MonoBehaviour:
   canvasSaveGame: {fileID: 0}
   canvasLoadGame: {fileID: 0}
   canvasNewGame: {fileID: 0}
+  canvasSettings: {fileID: 0}
 --- !u!4 &222127003
 Transform:
   m_ObjectHideFlags: 0
@@ -266,3 +267,4 @@ MonoBehaviour:
   canvasSaveGame: {fileID: 0}
   canvasLoadGame: {fileID: 0}
   canvasNewGame: {fileID: 0}
+  canvasSettings: {fileID: 0}
