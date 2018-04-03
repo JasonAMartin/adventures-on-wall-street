@@ -1,0 +1,18 @@
+ [
+    {
+    "companyName": "Rainmen Financial",
+     "stockSymbol": "RF",
+    "companyType": "Financial",
+    "stockPrice": 1,
+    "earliestStartingDay": 0,
+    "companyDescription": "Something here."
+    },
+    {
+      "companyName": "Cool Sauce",
+      "stockSymbol": "CS",
+      "companyType": "Computer",
+      "stockPrice": 25,
+      "earliestStartingDay": 33,
+      "companyDescription": "Something here 222."
+    }
+]
