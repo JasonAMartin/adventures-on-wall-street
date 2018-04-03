@@ -1,18 +1,426 @@
  [
     {
     "companyName": "Rainmen Financial",
-     "stockSymbol": "RF",
+     "stockSymbol": "RFS",
     "companyType": "Financial",
     "stockPrice": 1,
     "earliestStartingDay": 0,
     "companyDescription": "Something here."
     },
     {
-      "companyName": "Cool Sauce",
-      "stockSymbol": "CS",
+      "companyName": "Airplane Airlines",
+      "stockSymbol": "AAA",
       "companyType": "Computer",
-      "stockPrice": 25,
-      "earliestStartingDay": 33,
-      "companyDescription": "Something here 222."
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Terminators",
+      "stockSymbol": "TERM",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Empire Systems",
+      "stockSymbol": "EMPS",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "ComputerServing",
+      "stockSymbol": "CSERV",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "DeLorean Motors",
+      "stockSymbol": "DLM",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "TW Airlines",
+      "stockSymbol": "TWAIR",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Arthur & Anders",
+      "stockSymbol": "ARAN",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Cottonworths",
+      "stockSymbol": "COTT",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Pan USA",
+      "stockSymbol": "PANU",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "GlobalCOM",
+      "stockSymbol": "GLOBC",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "PW Wealth Management",
+      "stockSymbol": "PWWM",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "E.T. Shutton",
+      "stockSymbol": "ETSH",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Corral",
+      "stockSymbol": "CORR",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Noraval Softworks",
+      "stockSymbol": "NORSO",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "McCalf Partners",
+      "stockSymbol": "MCCP",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Golden Lotus Software",
+      "stockSymbol": "GLS",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Intuition Labs",
+      "stockSymbol": "INTL",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Adobo",
+      "stockSymbol": "ADBO",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Micromedia",
+      "stockSymbol": "MICRO",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Symantics",
+      "stockSymbol": "SYM",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Nanosoft",
+      "stockSymbol": "NANO",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Banana",
+      "stockSymbol": "BAN",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Phizzr",
+      "stockSymbol": "PHI",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Fireslab",
+      "stockSymbol": "FIRS",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Timeless Worther",
+      "stockSymbol": "TIWO",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Bestest Foodstuffs",
+      "stockSymbol": "BEST",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Nanorola",
+      "stockSymbol": "NANOR",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Lone Star Instruments",
+      "stockSymbol": "LSI",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Howard-Paul",
+      "stockSymbol": "HP",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Colpam Conglomerate",
+      "stockSymbol": "COLPAM",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "PA Steel",
+      "stockSymbol": "PAM",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Carterzilla",
+      "stockSymbol": "CART",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "General Millstone",
+      "stockSymbol": "GMILL",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Johan & Johan",
+      "stockSymbol": "JANDJ",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Kola-Kola",
+      "stockSymbol": "KOLA",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "4M",
+      "stockSymbol": "4M",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "UP Railroads",
+      "stockSymbol": "UPR",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Krafty Enterprises",
+      "stockSymbol": "KRE",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Greatyear",
+      "stockSymbol": "GRY",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Honeypot International",
+      "stockSymbol": "HPINTL",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Yow Chem",
+      "stockSymbol": "YOWC",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Boezing",
+      "stockSymbol": "BOE",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "AB & C",
+      "stockSymbol": "ABC",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "British Gas of America",
+      "stockSymbol": "BRIGO",
+      "companyType": "BGOA",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Great Electric Company",
+      "stockSymbol": "GEC",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Henry Motors",
+      "stockSymbol": "HENM",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Captain Motors",
+      "stockSymbol": "CAPM",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Dig Dugit",
+      "stockSymbol": "DD",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Adventure Systems",
+      "stockSymbol": "ADV",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Yar's Financial",
+      "stockSymbol": "YARS",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Mars Medical",
+      "stockSymbol": "MARS",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
+    },
+    {
+      "companyName": "Bueller Betterment",
+      "stockSymbol": "FBDO",
+      "companyType": "Computer",
+      "stockPrice": 1,
+      "earliestStartingDay": 0,
+      "companyDescription": "Cool desc"
     }
 ]

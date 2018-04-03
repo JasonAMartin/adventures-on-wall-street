@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Name: companyList
   m_EditorClassIdentifier: 
   companyList:
+  - {fileID: 11400000, guid: 00ee488a827779147aeb2eb460db018f, type: 2}
+  - {fileID: 11400000, guid: a2647e949a84ba244b7e80487d18f133, type: 2}
   - {fileID: 11400000, guid: 157beba937ec620449cc2b07312de8fe, type: 2}
   - {fileID: 11400000, guid: c36f8ddb98b40c447a2ea47082c0c7fc, type: 2}
