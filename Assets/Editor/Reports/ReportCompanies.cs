@@ -25,7 +25,7 @@ public class ReportCompanies
          * 6. Report if all companies have company description.
          * 7. Report if all companies have stock ticker.
          * 8. Report if all companies have company name.
-         >>* 9. Report if at least 20 companies have 0 as earliest date.
+         * 9. Report if at least 20 companies have 0 as earliest date.
          * 10. Report if at least 5 companies have 10 as earliest date.
          * 11. Report if any company has more than 999 as earliest date (should be 1).
          * 12. Report if any company has CanBeUsed as false.
@@ -33,7 +33,7 @@ public class ReportCompanies
          * 14. Report if any company has IsBeingUsed as false.
          * 15. Report if any company has assigned CEO (should be 1)
          * 16. Report if any company is missing company type.
-         * 17. Report # of stock price starting points (thinking levels like Level0 = 0-10, Level1 = 11-50, etc).
+         >>* 17. Report # of stock price starting points (thinking levels like Level0 = 0-10, Level1 = 11-50, etc).
          * 18. Report # of companies per stock price levels.
          * 19. Report if a company doesn't have a stock price level.
          * 20. Report on desired breakdown of levels (unknown right now), such as 30 companies level0, 20 companies level1 and so forth.
@@ -43,8 +43,9 @@ public class ReportCompanies
         List<Company> companies = new List<Company>();
         List<CompanyType> companyTypes = new List<CompanyType>();
         List<CompanyTypeReport> companyTypeReports = new List<CompanyTypeReport>();
-
-
+        int zeroStartDate = 0;
+        int tenStartDate = 0;
+        int maxStartDate = 0;
 
         // find assets
         string[] guids = AssetDatabase.FindAssets("t:company", null);
@@ -71,7 +72,12 @@ public class ReportCompanies
             // check company type and ++
             var cReport = companyTypeReports.Find(r => r.companyType == currentCompany.companyType);
             cReport.amount = cReport.amount + 1;
-        } 
+
+            if (currentCompany.earliestStartingDay == 0) zeroStartDate = zeroStartDate + 1;
+            if (currentCompany.earliestStartingDay == 10) tenStartDate = tenStartDate + 1;
+            if (currentCompany.earliestStartingDay == 999) maxStartDate = maxStartDate + 1;
+
+        }
 
         // get counts
         //var maleResults = ceos.Where(o => o.gender.name == "MALE");
@@ -123,6 +129,18 @@ public class ReportCompanies
             {
                 Debug.LogError("FAIL: Missing name for company -> " + c.companyName);
             }
+
+            if (!c.canBeUsed) Debug.LogError("FAIL: canBeUsed is set to false for company -> " + c.companyName);
+            if (c.wentBankrupt) Debug.LogError("FAIL: wentBankrupt is set to true for company -> " + c.companyName);
+            if (c.isBeingUsed) Debug.LogError("FAIL: isBeingUsed is set to true for company -> " + c.companyName);
+            if (c.ceo != null) Debug.LogError("FAIL: Company has assigned CEO! Company: " + c.companyName);
+            if (c.companyType == null) Debug.LogError("FAIL: Company doesn't have a type! Company: " + c.companyName);
         }
+
+        // Report on Start Dates
+
+        if (zeroStartDate < 20) Debug.LogError("FAIL: Fewer than 20 companies can start game.");
+        if (tenStartDate < 10) Debug.LogError("FAIL: Fewer than 10 companies have starting date of 10.");
+        if (maxStartDate > 1) Debug.LogError("FAIL: too many companies with max start date.");
     }
 }
