@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Name: CompanyType-Financial
   m_EditorClassIdentifier: 
   companyType: Financial
+  minimumRequired: 10

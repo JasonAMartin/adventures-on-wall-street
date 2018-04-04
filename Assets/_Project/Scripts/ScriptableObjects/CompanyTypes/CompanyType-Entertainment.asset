@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Name: CompanyType-Entertainment
   m_EditorClassIdentifier: 
   companyType: Entertainment
+  minimumRequired: 10

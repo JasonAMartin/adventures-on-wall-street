@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Name: CompanyType-Chemical
   m_EditorClassIdentifier: 
   companyType: Chemical
+  minimumRequired: 10

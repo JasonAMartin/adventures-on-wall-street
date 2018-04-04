@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Name: CompanyType-Energy
   m_EditorClassIdentifier: 
   companyType: Energy
+  minimumRequired: 10

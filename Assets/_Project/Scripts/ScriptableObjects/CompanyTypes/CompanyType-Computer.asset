@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Name: CompanyType-Computer
   m_EditorClassIdentifier: 
   companyType: Computer
+  minimumRequired: 10

@@ -6,4 +6,5 @@ using UnityEngine;
 public class CompanyType : ScriptableObject
 {
     public string companyType;
+    public int minimumRequired;
 }

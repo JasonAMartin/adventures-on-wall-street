@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Name: CompanyType-MassMedia
   m_EditorClassIdentifier: 
   companyType: Mass Media
+  minimumRequired: 10

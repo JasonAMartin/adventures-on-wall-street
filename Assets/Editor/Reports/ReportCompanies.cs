@@ -3,6 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using System.Linq;
+
+public class CompanyTypeReport
+{
+    public CompanyType companyType;
+    public int amount;
+}
+
 public class ReportCompanies
 {
     [MenuItem("Assets/Create/Report Tools/ReportCompanies")]
@@ -16,9 +23,9 @@ public class ReportCompanies
          * 4. Report pass/fail for counts, like 10 companies per type and so forth
          * 5. Report if all companies pass stock ticker check (no dupes)
          * 6. Report if all companies have company description.
-         * 7. Report if all companies have stock sticker.
+         * 7. Report if all companies have stock ticker.
          * 8. Report if all companies have company name.
-         * 9. Report if at least 20 companies have 0 as earliest date.
+         >>* 9. Report if at least 20 companies have 0 as earliest date.
          * 10. Report if at least 5 companies have 10 as earliest date.
          * 11. Report if any company has more than 999 as earliest date (should be 1).
          * 12. Report if any company has CanBeUsed as false.
@@ -33,38 +40,89 @@ public class ReportCompanies
          */
 
         // create List of CEOs
-        List<CEO> ceos = new List<CEO>();
+        List<Company> companies = new List<Company>();
+        List<CompanyType> companyTypes = new List<CompanyType>();
+        List<CompanyTypeReport> companyTypeReports = new List<CompanyTypeReport>();
+
+
 
         // find assets
-        string[] guids = AssetDatabase.FindAssets("t:ceo", null);
+        string[] guids = AssetDatabase.FindAssets("t:company", null);
+        string[] guids2 = AssetDatabase.FindAssets("t:companytype", null);
 
         // populate lists
+        foreach (string guid in guids2)
+        {
+            string path = AssetDatabase.GUIDToAssetPath(guid);
+            companyTypes.Add(AssetDatabase.LoadAssetAtPath<CompanyType>(path));
+            // add company type to report
+            CompanyTypeReport ctr = new CompanyTypeReport();
+            ctr.companyType = AssetDatabase.LoadAssetAtPath<CompanyType>(path);
+            ctr.amount = 0;
+            companyTypeReports.Add(ctr);
+        }
+
         foreach (string guid in guids)
         {
             string path = AssetDatabase.GUIDToAssetPath(guid);
-            ceos.Add(AssetDatabase.LoadAssetAtPath<CEO>(path));
-        }
+            Company currentCompany = AssetDatabase.LoadAssetAtPath<Company>(path);
+            companies.Add(currentCompany);
+
+            // check company type and ++
+            var cReport = companyTypeReports.Find(r => r.companyType == currentCompany.companyType);
+            cReport.amount = cReport.amount + 1;
+        } 
 
         // get counts
-        var maleResults = ceos.Where(o => o.gender.name == "MALE");
-        var femaleResults = ceos.Where(o => o.gender.name == "FEMALE");
-        var greatResults = ceos.Where(o => o.ceoLevel.name == "CEOLevelGreat");
-        var goodResults = ceos.Where(o => o.ceoLevel.name == "CEOLevelGood");
-        var averageResults = ceos.Where(o => o.ceoLevel.name == "CEOLevelAverage");
-        var mediocreResults = ceos.Where(o => o.ceoLevel.name == "CEOLevelMediocre");
-        var terribleResults = ceos.Where(o => o.ceoLevel.name == "CEOLevelTerrible");
+        //var maleResults = ceos.Where(o => o.gender.name == "MALE");
+        //var femaleResults = ceos.Where(o => o.gender.name == "FEMALE");
+        //var greatResults = ceos.Where(o => o.ceoLevel.name == "CEOLevelGreat");
+        //var goodResults = ceos.Where(o => o.ceoLevel.name == "CEOLevelGood");
+        //var averageResults = ceos.Where(o => o.ceoLevel.name == "CEOLevelAverage");
+        //var mediocreResults = ceos.Where(o => o.ceoLevel.name == "CEOLevelMediocre");
+        //var terribleResults = ceos.Where(o => o.ceoLevel.name == "CEOLevelTerrible");
 
-        Debug.Log("TOTAL CEOS: " + ceos.Count);
-        Debug.Log("MALE CEOS: " + maleResults.Count());
-        Debug.Log("FEMALE CEOS: " + femaleResults.Count());
-        Debug.Log("------ SKILL BREAKDOWN -----");
-        Debug.Log("GREAT: " + greatResults.Count());
-        Debug.Log("GOOD: " + goodResults.Count());
-        Debug.Log("AVERAGE: " + averageResults.Count());
-        Debug.Log("MEDIOCRE: " + mediocreResults.Count());
-        Debug.Log("TERRIBLE: " + terribleResults.Count());
-        // EditorUtility.FocusProjectWindow();
-        // Selection.activeObject = asset;
+        // Report
+        Debug.Log("TOTAL CEOS: " + companies.Count);
+        Debug.Log("TOTAL COMPANY TYPES: " + companyTypes.Count);
 
+        // Report Company Types & Counts
+        foreach (CompanyTypeReport report in companyTypeReports)
+        {
+           Debug.Log("COMPANY TYPE: " + report.companyType + " > COUNT : " + report.amount);
+            if (report.amount >= report.companyType.minimumRequired)
+            {
+                Debug.Log("SUCCESS! PASSED>> :: " + report.companyType);
+            } else
+            {
+                Debug.LogError("FAIL: Company Type Amount -> " + report.companyType + " " + report.amount + " out of " + report.companyType.minimumRequired + " required.");
+            }
+            Debug.Log("------------------------------------");
+        }
+
+        // Stock ticker check, description check
+        foreach (Company c in companies)
+        {
+            var tickerResults = companies.Where(o => o.stockSymbol == c.stockSymbol);
+            if (tickerResults.Count() > 1)
+            {
+                Debug.LogError("FAIL: Duplicate stock symbol with symbol: " + c.stockSymbol + " :: " + c.companyName);
+            }
+
+            if (c.companyDescription.Length < 10)
+            {
+                Debug.LogError("FAIL: Missing description for company -> " + c.companyName);
+            }
+
+            if (c.stockSymbol.Length < 1)
+            {
+                Debug.LogError("FAIL: Missing stock ticker for company -> " + c.companyName);
+            }
+
+            if (c.companyName.Length < 3)
+            {
+                Debug.LogError("FAIL: Missing name for company -> " + c.companyName);
+            }
+        }
     }
 }

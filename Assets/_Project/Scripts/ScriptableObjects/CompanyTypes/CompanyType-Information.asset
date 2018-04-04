@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Name: CompanyType-Information
   m_EditorClassIdentifier: 
   companyType: Information
+  minimumRequired: 10

@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Name: CompanyType-Food
   m_EditorClassIdentifier: 
   companyType: Food
+  minimumRequired: 10

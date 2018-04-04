@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Name: CompanyType-Aerospace
   m_EditorClassIdentifier: 
   companyType: Aerospace
+  minimumRequired: 10

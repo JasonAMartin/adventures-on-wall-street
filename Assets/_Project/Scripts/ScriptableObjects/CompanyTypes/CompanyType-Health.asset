@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Name: CompanyType-Health
   m_EditorClassIdentifier: 
   companyType: Health
+  minimumRequired: 10

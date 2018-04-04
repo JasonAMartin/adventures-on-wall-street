@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Name: CompanyType-Agriculture
   m_EditorClassIdentifier: 
   companyType: Agriculture
+  minimumRequired: 10

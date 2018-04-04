@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Name: CompanyType-Transportation
   m_EditorClassIdentifier: 
   companyType: Transportation
+  minimumRequired: 10

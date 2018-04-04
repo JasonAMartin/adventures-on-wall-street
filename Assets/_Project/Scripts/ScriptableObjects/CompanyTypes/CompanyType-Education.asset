@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Name: CompanyType-Education
   m_EditorClassIdentifier: 
   companyType: Education
+  minimumRequired: 10

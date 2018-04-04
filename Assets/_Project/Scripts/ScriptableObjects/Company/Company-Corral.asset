@@ -9,15 +9,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 521ab8b64041b084ba70f165fe3644e8, type: 3}
-  m_Name: Company-CoolSauce
+  m_Name: Company-Corral
   m_EditorClassIdentifier: 
-  companyName: Cool Sauce
-  stockSymbol: CS
+  companyName: Corral
+  stockSymbol: CORR
   companyType: {fileID: 11400000, guid: ce273018276d785459e8da226db36e95, type: 2}
-  stockPrice: 25
+  stockPrice: 1
   earliestStartingDay: 0
   companyStrength: {fileID: 0}
-  companyDescription: Something here 222.
+  companyDescription: Cool desc
   canBeUsed: 1
   wentBankrupt: 0
   isBeingUsed: 0

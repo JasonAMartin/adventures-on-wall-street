@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Name: CompanyType-Utilities
   m_EditorClassIdentifier: 
   companyType: Utilities
+  minimumRequired: 10
