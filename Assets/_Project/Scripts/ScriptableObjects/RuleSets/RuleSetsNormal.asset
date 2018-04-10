@@ -11,9 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1151d326856dcd4ca503ef3088c4967, type: 3}
   m_Name: RuleSetsNormal
   m_EditorClassIdentifier: 
-  difficulty: {fileID: 11400000, guid: 477e06726ca2b4f40a684d1e05f1637c, type: 2}
-  terribleProbability: 15
-  mediocreProbability: 20
-  averageProbability: 30
-  goodProbability: 20
-  greatProbability: 15
+  difficulty: {fileID: 11400000, guid: 44e37276e2c58dc479eeb4a4ab1a0bb9, type: 2}
+  terribleProbability: 0.15
+  mediocreProbability: 0.2
+  averageProbability: 0.3
+  goodProbability: 0.2
+  greatProbability: 0.15

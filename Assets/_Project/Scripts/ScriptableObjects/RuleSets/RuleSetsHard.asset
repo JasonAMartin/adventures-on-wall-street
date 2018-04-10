@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Name: RuleSetsHard
   m_EditorClassIdentifier: 
   difficulty: {fileID: 11400000, guid: 477e06726ca2b4f40a684d1e05f1637c, type: 2}
-  terribleProbability: 50
-  mediocreProbability: 25
-  averageProbability: 10
-  goodProbability: 10
-  greatProbability: 5
+  terribleProbability: 0.5
+  mediocreProbability: 0.25
+  averageProbability: 0.1
+  goodProbability: 0.1
+  greatProbability: 0.05

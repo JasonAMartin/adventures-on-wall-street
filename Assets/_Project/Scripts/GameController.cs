@@ -86,6 +86,8 @@ public class GameController : MonoBehaviour {
 
         // TODO go through and make sure gameDataBlueprint has just data from assets bundle except for player initiated data.
 
+        // TODO should check if Asset bundle is loaded, since it can only be loaded twice.
+       
         var myLoadedAssetBundle = AssetBundle.LoadFromFile(Path.Combine(Application.dataPath, "aowsso"));
         if (myLoadedAssetBundle == null)
         {
@@ -97,7 +99,7 @@ public class GameController : MonoBehaviour {
         List<CompanyLevel> companyLevelList = myLoadedAssetBundle.LoadAsset<CompanyLevelList>("companylevellist").companyLevelList;
         List<CEO> ceoList = myLoadedAssetBundle.LoadAsset<CEOList>("ceolist").ceoList;
         List<GameDifficulty> gameDifficultyList = myLoadedAssetBundle.LoadAsset<GameDifficultyList>("gamedifficultylist").gameDifficultyList;
-
+        List<RuleSets> rulesetsList = myLoadedAssetBundle.LoadAsset<RuleSetsList>("rulesetslist").ruleSetsList;
 
 
         gameDataBlueprint.player = player;
@@ -115,12 +117,13 @@ public class GameController : MonoBehaviour {
 
         // If game difficulty isn't set, make it NORMAL
         CheckGameSettings(gameDifficultyList);
-        PickStartingCompanies(companyTypeList, companyLevelList);
+        PickStartingCompanies(companyTypeList, companyLevelList, rulesetsList);
     }
 
-    public void PickStartingCompanies(List<CompanyType> companyTypeList, List<CompanyLevel> companyLevelList)
+    public void PickStartingCompanies(List<CompanyType> companyTypeList, List<CompanyLevel> companyLevelList, List<RuleSets> rulesetsList)
     {
         List<StockPriceLevel> stockPriceAllocation = SetupStockPriceLevelList();
+        List<CompanyLevel> companyLevelAllocation = SetupCompanyLevelList(rulesetsList, companyLevelList);
         System.Random rnd = new System.Random();
 
         // I need 20 starting companies.
@@ -150,8 +153,9 @@ public class GameController : MonoBehaviour {
 
 
             // set company strength
-            int companyStrengthDice = rnd.Next(0, companyLevelList.Count() - 1);
-            matchingCompanies.ElementAt(diceRoll).companyStrength = companyLevelList.ElementAt(companyStrengthDice);
+            int companyStrengthDice = rnd.Next(0, companyLevelAllocation.Count() - 1);
+            matchingCompanies.ElementAt(diceRoll).companyStrength = companyLevelAllocation.ElementAt(companyStrengthDice);
+            companyLevelAllocation.RemoveAt(companyStrengthDice);
 
             // set ceo
             var matchingCeos = gameDataBlueprint.ceoList.Where(o => o.isEmployed == false);
@@ -165,20 +169,7 @@ public class GameController : MonoBehaviour {
 
         }
 
-        var usedCompanies = gameDataBlueprint.companyList.Where(o => o.ceo != null);
-
-        Debug.Log("USED: " + usedCompanies.Count());
-        for (int index = 0; index < usedCompanies.Count(); index++)
-        {
-            Company currentCompany = usedCompanies.ElementAt(index);
-            //  Debug.Log("company " + index + 1 + ": " + currentCompany.companyName + " price: " + currentCompany.stockPrice + " price level: " + currentCompany.stockPriceLevel + " str: " + currentCompany.companyStrength + " CEO: " + currentCompany.ceo);
-            if (usedCompanies.ElementAt(index).ceo != null)
-            {
-                Debug.Log(index + " : " + usedCompanies.ElementAt(index).ceo);
-                Debug.Log("sub--" + index + " : "); //.firstName.ToString()           
-            }
-        }
-   
+        DebugIt();
     }
 
     public List<StockPriceLevel> SetupStockPriceLevelList()
@@ -205,6 +196,53 @@ public class GameController : MonoBehaviour {
             // set game difficulty to default
             var defaultGameDifficulty = gameDifficultyList.Where(o => o.isDefault == true);
             gameDataBlueprint.gameDifficulty = defaultGameDifficulty.ElementAt(0);
+        }
+    }
+
+    public List<CompanyLevel> SetupCompanyLevelList(List<RuleSets> rulesetsList, List<CompanyLevel> companyLevelList )
+    {
+        Debug.Log("Game diff: " + gameDataBlueprint.gameDifficulty);
+
+
+        int totalLevels = 20;
+        // get difficulty
+        var ruleDifficulty = rulesetsList.Where(o => o.difficulty.gameDifficultyName == gameDataBlueprint.gameDifficulty.gameDifficultyName); // easy, normal, hard
+        List<CompanyLevel> companyLevels = new List<CompanyLevel>();
+
+        // TODO this is hardcoded. Can I get away from this?
+        var terribleProb = companyLevelList.Where(o => o.name == "CompanyLevelTerrible");
+        var mediocreProb = companyLevelList.Where(o => o.name == "CompanyLevelMediocre");
+        var greatProb = companyLevelList.Where(o => o.name == "CompanyLevelGreat");
+        var goodProb = companyLevelList.Where(o => o.name == "CompanyLevelGood");
+        var averageProb = companyLevelList.Where(o => o.name == "CompanyLevelAverage");
+
+        float copiesTerrible = totalLevels * ruleDifficulty.ElementAt(0).terribleProbability;
+        float copiesMediocre = totalLevels * ruleDifficulty.ElementAt(0).mediocreProbability;
+        float copiesGreat = totalLevels * ruleDifficulty.ElementAt(0).greatProbability;
+        float copiesGood = totalLevels * ruleDifficulty.ElementAt(0).goodProbability;
+        float copiesAverage = totalLevels * ruleDifficulty.ElementAt(0).averageProbability;
+
+        for (int i =0; i < copiesTerrible; i++) { companyLevels.Add(terribleProb.ElementAt(0)); }
+        for (int i = 0; i < copiesMediocre; i++) { companyLevels.Add(mediocreProb.ElementAt(0)); }
+        for (int i = 0; i < copiesGreat; i++) { companyLevels.Add(greatProb.ElementAt(0)); }
+        for (int i = 0; i < copiesGood; i++) { companyLevels.Add(goodProb.ElementAt(0)); }
+        for (int i = 0; i < copiesAverage; i++) { companyLevels.Add(averageProb.ElementAt(0)); }
+
+        return companyLevels;
+    }
+
+    public void DebugIt()
+    {
+        var usedCompanies = gameDataBlueprint.companyList.Where(o => o.ceo != null);
+        Debug.Log("USED: " + usedCompanies.Count());
+        for (int index = 0; index < usedCompanies.Count(); index++)
+        {
+            Company currentCompany = usedCompanies.ElementAt(index);
+            //  Debug.Log("company " + index + 1 + ": " + currentCompany.companyName + " price: " + currentCompany.stockPrice + " price level: " + currentCompany.stockPriceLevel + " str: " + currentCompany.companyStrength + " CEO: " + currentCompany.ceo);
+            if (usedCompanies.ElementAt(index).ceo != null)
+            {
+                Debug.Log(index + " : " + usedCompanies.ElementAt(index).companyStrength);
+            }
         }
     }
 }
