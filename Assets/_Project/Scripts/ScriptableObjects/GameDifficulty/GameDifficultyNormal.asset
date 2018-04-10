@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Name: GameDifficultyNormal
   m_EditorClassIdentifier: 
   gameDifficultyName: NORMAL
+  isDefault: 1

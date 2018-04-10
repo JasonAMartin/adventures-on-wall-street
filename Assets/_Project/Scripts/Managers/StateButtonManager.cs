@@ -52,7 +52,6 @@ public class StateButtonManager : MonoBehaviour
 
         if (buttonType == ButtonType.MAINMENU)
         {
-            Debug.Log("Hey hey hey");
             MainMenuManager mainMenuManager = new MainMenuManager();
             mainMenuManager.NavigateToMainMenu();
         }

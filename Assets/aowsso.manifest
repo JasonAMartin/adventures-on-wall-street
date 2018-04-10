@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 11619370
+CRC: 3201115832
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 48ae7541639bd951a24e56259238892e
+    Hash: 173f5f22c5157dd6b0d453a2b3f5292e
   TypeTreeHash:
     serializedVersion: 2
-    Hash: a0b9a39c4df08d7c7fc372821099ee5d
+    Hash: da48844a124b9ef61e4cc3e56e8b1352
 HashAppended: 0
 ClassTypes:
 - Class: 114
@@ -71,6 +71,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 05722ee6465ad534abb32c5e2930f913, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: dba2067662461e24a937b3489aed6702, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: c57643afa10ce3f41914fae611d03b35, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 Assets:
@@ -379,6 +381,7 @@ Assets:
 - Assets/_Project/Scripts/ScriptableObjects/GameActions/ADD_RELATIONSHIP_POINTS.asset
 - Assets/_Project/Scripts/ScriptableObjects/GameDifficulty/GameDifficultyNormal.asset
 - Assets/_Project/Scripts/ScriptableObjects/RelationshipDrivers/AcceptingDecliningEventOffers/DECLINE_EVENT_OFFER_ADD_RELATIONSHIP_POINTS_BUSINESS.asset
+- Assets/_Project/Scripts/ScriptableObjects/GameDifficulty/List/GameDifficultyList.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Hung-Grant.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Elsa-Roy.asset
 - Assets/_Project/Scripts/ScriptableObjects/RelationshipDrivers/BuyingSellingStock/BUY_STOCK_TRANSPORTATION_ADD_RELATIONSHIP_POINTS.asset

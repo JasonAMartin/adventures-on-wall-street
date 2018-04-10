@@ -7,5 +7,6 @@ using UnityEngine;
 public class GameDifficulty : ScriptableObject
 {
     public string gameDifficultyName;
+    public bool isDefault = false;
 }
 

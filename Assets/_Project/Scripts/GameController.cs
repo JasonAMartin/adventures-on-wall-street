@@ -96,6 +96,9 @@ public class GameController : MonoBehaviour {
         List<CompanyType> companyTypeList = myLoadedAssetBundle.LoadAsset<CompanyTypeList>("companytypelist").companyTypelist;
         List<CompanyLevel> companyLevelList = myLoadedAssetBundle.LoadAsset<CompanyLevelList>("companylevellist").companyLevelList;
         List<CEO> ceoList = myLoadedAssetBundle.LoadAsset<CEOList>("ceolist").ceoList;
+        List<GameDifficulty> gameDifficultyList = myLoadedAssetBundle.LoadAsset<GameDifficultyList>("gamedifficultylist").gameDifficultyList;
+
+
 
         gameDataBlueprint.player = player;
         gameDataBlueprint.player.playerName = playerName;
@@ -108,6 +111,10 @@ public class GameController : MonoBehaviour {
             Debug.Log("ERROR!!!!");
             return;
         }
+
+
+        // If game difficulty isn't set, make it NORMAL
+        CheckGameSettings(gameDifficultyList);
         PickStartingCompanies(companyTypeList, companyLevelList);
     }
 
@@ -190,5 +197,14 @@ public class GameController : MonoBehaviour {
             }
         }
         return spList;
+    }
+
+    public void CheckGameSettings(List<GameDifficulty> gameDifficultyList) {
+        if (gameDataBlueprint.gameDifficulty == null)
+        {
+            // set game difficulty to default
+            var defaultGameDifficulty = gameDifficultyList.Where(o => o.isDefault == true);
+            gameDataBlueprint.gameDifficulty = defaultGameDifficulty.ElementAt(0);
+        }
     }
 }
