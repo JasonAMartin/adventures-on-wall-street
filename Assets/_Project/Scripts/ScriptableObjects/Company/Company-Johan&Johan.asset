@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   companyName: Johan & Johan
   stockSymbol: JANDJ
-  companyType: {fileID: 11400000, guid: ce273018276d785459e8da226db36e95, type: 2}
+  companyType: {fileID: 11400000, guid: ec70cf1f3e5efeb4ca6aa43743b87419, type: 2}
   stockPrice: 1
   earliestStartingDay: 0
   companyStrength: {fileID: 0}
@@ -22,3 +22,4 @@ MonoBehaviour:
   wentBankrupt: 0
   isBeingUsed: 0
   ceo: {fileID: 0}
+  stockPriceLevel: {fileID: 0}

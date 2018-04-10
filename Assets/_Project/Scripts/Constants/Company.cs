@@ -16,4 +16,5 @@ public class Company : ScriptableObject
     public bool wentBankrupt = false;
     public bool isBeingUsed = false;
     public CEO ceo;
+    public StockPriceLevel stockPriceLevel;
 }

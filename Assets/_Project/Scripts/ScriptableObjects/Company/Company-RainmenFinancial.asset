@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   companyName: Rainmen Financial
   stockSymbol: RFS
-  companyType: {fileID: 11400000, guid: 903c57355a7f5264cb7dc70719785190, type: 2}
+  companyType: {fileID: 11400000, guid: 0d325646601389144ac4097fc84897a3, type: 2}
   stockPrice: 1
   earliestStartingDay: 0
   companyStrength: {fileID: 0}
@@ -22,3 +22,4 @@ MonoBehaviour:
   wentBankrupt: 0
   isBeingUsed: 0
   ceo: {fileID: 0}
+  stockPriceLevel: {fileID: 0}

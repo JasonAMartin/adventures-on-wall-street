@@ -13,8 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   companyName: British Gas of America
   stockSymbol: BRIGO
-  companyType: {fileID: 11400000, guid: 717805142069b364e9da9aca521cb3ba, type: 2}
-  stockPrice: 1
+  companyType: {fileID: 11400000, guid: 903c57355a7f5264cb7dc70719785190, type: 2}
+  stockPrice: 7
   earliestStartingDay: 0
   companyStrength: {fileID: 0}
   companyDescription: Cool desc
@@ -22,3 +22,4 @@ MonoBehaviour:
   wentBankrupt: 0
   isBeingUsed: 0
   ceo: {fileID: 0}
+  stockPriceLevel: {fileID: 11400000, guid: fc95a3f5d4c3fd4489e958be6edf9831, type: 2}

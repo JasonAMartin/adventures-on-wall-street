@@ -13,8 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   companyName: E.T. Shutton
   stockSymbol: ETSH
-  companyType: {fileID: 11400000, guid: ce273018276d785459e8da226db36e95, type: 2}
-  stockPrice: 1
+  companyType: {fileID: 11400000, guid: 1d27782b6ac62324b9cabcc7236d07b1, type: 2}
+  stockPrice: 481
   earliestStartingDay: 0
   companyStrength: {fileID: 0}
   companyDescription: Cool desc
@@ -22,3 +22,4 @@ MonoBehaviour:
   wentBankrupt: 0
   isBeingUsed: 0
   ceo: {fileID: 0}
+  stockPriceLevel: {fileID: 11400000, guid: d2c87b875f3197845a3027fafa27b11b, type: 2}

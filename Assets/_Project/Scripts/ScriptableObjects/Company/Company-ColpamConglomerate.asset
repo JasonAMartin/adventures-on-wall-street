@@ -13,8 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   companyName: Colpam Conglomerate
   stockSymbol: COLPAM
-  companyType: {fileID: 11400000, guid: ce273018276d785459e8da226db36e95, type: 2}
-  stockPrice: 1
+  companyType: {fileID: 11400000, guid: b5fd92180c7f8de48a259b8c327f3436, type: 2}
+  stockPrice: 668
   earliestStartingDay: 0
   companyStrength: {fileID: 0}
   companyDescription: Cool desc
@@ -22,3 +22,4 @@ MonoBehaviour:
   wentBankrupt: 0
   isBeingUsed: 0
   ceo: {fileID: 0}
+  stockPriceLevel: {fileID: 11400000, guid: 5e314bdabff6673448492c50dedb34b4, type: 2}

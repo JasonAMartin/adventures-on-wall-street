@@ -13,8 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   companyName: PA Steel
   stockSymbol: PAM
-  companyType: {fileID: 11400000, guid: ce273018276d785459e8da226db36e95, type: 2}
-  stockPrice: 1
+  companyType: {fileID: 11400000, guid: c2f96dd30a45f2a4486d2d0c2d5efcaa, type: 2}
+  stockPrice: 17
   earliestStartingDay: 0
   companyStrength: {fileID: 0}
   companyDescription: Cool desc
@@ -22,3 +22,4 @@ MonoBehaviour:
   wentBankrupt: 0
   isBeingUsed: 0
   ceo: {fileID: 0}
+  stockPriceLevel: {fileID: 11400000, guid: 2b28a6eeab2cc1a43915f891f81d5fc9, type: 2}

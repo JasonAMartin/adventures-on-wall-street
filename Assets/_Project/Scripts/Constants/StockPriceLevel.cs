@@ -6,4 +6,6 @@ using UnityEngine;
 public class StockPriceLevel : ScriptableObject {
     public int minimumStartingPrice;
     public int maximimStartingPrice;
+    public float startingThreshold;
 }
+

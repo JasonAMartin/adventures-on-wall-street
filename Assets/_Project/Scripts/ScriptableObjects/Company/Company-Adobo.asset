@@ -13,8 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   companyName: Adobo
   stockSymbol: ADBO
-  companyType: {fileID: 11400000, guid: ce273018276d785459e8da226db36e95, type: 2}
-  stockPrice: 1
+  companyType: {fileID: 11400000, guid: 8a59bc2ae84096f4495b43dff312a1c2, type: 2}
+  stockPrice: 97
   earliestStartingDay: 0
   companyStrength: {fileID: 0}
   companyDescription: Cool desc
@@ -22,3 +22,4 @@ MonoBehaviour:
   wentBankrupt: 0
   isBeingUsed: 0
   ceo: {fileID: 0}
+  stockPriceLevel: {fileID: 11400000, guid: dca4850dc28fa9248b4b0f5f58b33467, type: 2}

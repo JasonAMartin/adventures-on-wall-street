@@ -14,7 +14,7 @@ MonoBehaviour:
   companyName: Dig Dugit
   stockSymbol: DD
   companyType: {fileID: 11400000, guid: ce273018276d785459e8da226db36e95, type: 2}
-  stockPrice: 1
+  stockPrice: 40
   earliestStartingDay: 0
   companyStrength: {fileID: 0}
   companyDescription: Cool desc
@@ -22,3 +22,4 @@ MonoBehaviour:
   wentBankrupt: 0
   isBeingUsed: 0
   ceo: {fileID: 0}
+  stockPriceLevel: {fileID: 11400000, guid: 209f72675a1c2b847bd7a688f3b44f0a, type: 2}

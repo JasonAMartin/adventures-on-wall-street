@@ -14,7 +14,7 @@ MonoBehaviour:
   companyName: Terminators
   stockSymbol: TERM
   companyType: {fileID: 11400000, guid: ce273018276d785459e8da226db36e95, type: 2}
-  stockPrice: 1
+  stockPrice: 376
   earliestStartingDay: 0
   companyStrength: {fileID: 0}
   companyDescription: Cool desc
@@ -22,3 +22,4 @@ MonoBehaviour:
   wentBankrupt: 0
   isBeingUsed: 0
   ceo: {fileID: 0}
+  stockPriceLevel: {fileID: 11400000, guid: 16297aa9030744a499f106d80fa7d235, type: 2}

@@ -9,7 +9,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 520137ce6a9a8744b8c18a5be38e7670, type: 3}
-  m_Name: StockPriceLevel-21-30
+  m_Name: StockPriceLevel-9
   m_EditorClassIdentifier: 
-  minimumStartingPrice: 1
-  maximimStartingPrice: 10
+  minimumStartingPrice: 401
+  maximimStartingPrice: 500
+  startingThreshold: 0.1

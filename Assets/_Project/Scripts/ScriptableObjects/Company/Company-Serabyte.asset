@@ -18,5 +18,8 @@ MonoBehaviour:
   earliestStartingDay: 2147483647
   companyStrength: {fileID: 11400000, guid: e34ba4db109b4d44ebbdfe4e80aeef4e, type: 2}
   companyDescription: Company that made this awesome, fun game!
-  inBusiness: 1
+  canBeUsed: 1
+  wentBankrupt: 0
+  isBeingUsed: 0
   ceo: {fileID: 0}
+  stockPriceLevel: {fileID: 0}

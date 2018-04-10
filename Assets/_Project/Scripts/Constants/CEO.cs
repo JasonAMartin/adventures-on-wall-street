@@ -8,4 +8,7 @@ public class CEO : ScriptableObject {
     public string lastName;
     public Gender gender;
     public CEOLevel ceoLevel;
+    public bool isEmployed = false;
+    public Company employedBy;
+    public List<Company> employmentHistory; // ideally make this more, like company + time, etc.
 }

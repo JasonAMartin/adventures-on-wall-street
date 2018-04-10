@@ -13,8 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   companyName: PW Wealth Management
   stockSymbol: PWWM
-  companyType: {fileID: 11400000, guid: ce273018276d785459e8da226db36e95, type: 2}
-  stockPrice: 1
+  companyType: {fileID: 11400000, guid: 42517432860048d479ce3760f40fbd79, type: 2}
+  stockPrice: 35
   earliestStartingDay: 0
   companyStrength: {fileID: 0}
   companyDescription: Cool desc
@@ -22,3 +22,4 @@ MonoBehaviour:
   wentBankrupt: 0
   isBeingUsed: 0
   ceo: {fileID: 0}
+  stockPriceLevel: {fileID: 11400000, guid: 209f72675a1c2b847bd7a688f3b44f0a, type: 2}
