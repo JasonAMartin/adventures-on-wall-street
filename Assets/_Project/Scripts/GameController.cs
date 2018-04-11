@@ -101,11 +101,26 @@ public class GameController : MonoBehaviour {
         List<GameDifficulty> gameDifficultyList = myLoadedAssetBundle.LoadAsset<GameDifficultyList>("gamedifficultylist").gameDifficultyList;
         List<RuleSets> rulesetsList = myLoadedAssetBundle.LoadAsset<RuleSetsList>("rulesetslist").ruleSetsList;
 
+        // If game difficulty isn't set, make it NORMAL
+        CheckGameSettings(gameDifficultyList);
 
+        // get game difficulty setting
+        // TODO this is repeated below in a method. Just pass this.
+        var ruleDifficulty = rulesetsList.Where(o => o.difficulty.gameDifficultyName == gameDataBlueprint.gameDifficulty.gameDifficultyName); // easy, normal, hard
+
+        // Set day to 0 and segment to DAY
+        gameDataBlueprint.currentGameSegment = GameDataBlueprint.GameSegments.DAY;
+        gameDataBlueprint.daysPlayed = 0;
+
+        // Set play obj, player name, capital
         gameDataBlueprint.player = player;
         gameDataBlueprint.player.playerName = playerName;
+        gameDataBlueprint.player.playerCapital = ruleDifficulty.ElementAt(0).playerStartingCapital;
+
+        // set company list, ceo list
         gameDataBlueprint.companyList = myLoadedAssetBundle.LoadAsset<CompanyList>("companylist").companyList;
         gameDataBlueprint.ceoList = ceoList;
+
         currentGameState = GameStates.GAME_READY;
         HideAllCanvas(canvasSaveGame);
         if (companyLevelList.Count() < 1)
@@ -114,9 +129,6 @@ public class GameController : MonoBehaviour {
             return;
         }
 
-
-        // If game difficulty isn't set, make it NORMAL
-        CheckGameSettings(gameDifficultyList);
         PickStartingCompanies(companyTypeList, companyLevelList, rulesetsList);
     }
 
@@ -233,6 +245,7 @@ public class GameController : MonoBehaviour {
 
     public void DebugIt()
     {
+        Debug.LogError("CAP: " + gameDataBlueprint.player.playerCapital);
         var usedCompanies = gameDataBlueprint.companyList.Where(o => o.ceo != null);
         Debug.Log("USED: " + usedCompanies.Count());
         for (int index = 0; index < usedCompanies.Count(); index++)

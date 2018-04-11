@@ -17,3 +17,4 @@ MonoBehaviour:
   averageProbability: 0.3
   goodProbability: 0.2
   greatProbability: 0.15
+  playerStartingCapital: 50000

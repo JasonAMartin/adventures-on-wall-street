@@ -12,5 +12,6 @@ public class RuleSets : ScriptableObject
     public float averageProbability; // average
     public float goodProbability; // good
     public float greatProbability; // great
+    public int playerStartingCapital;
 }
 

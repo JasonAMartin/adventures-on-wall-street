@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class GameDataBlueprint
 {
+    // Setup
+    public enum GameSegments { DAY, NIGHT };
+
     // Game Actors
     public CEOLevel ceoLevel;
     public List<CEO> ceoList;
@@ -15,6 +18,7 @@ public class GameDataBlueprint
     public GameDifficulty gameDifficulty;
     public int daysPlayed;
     public string gameSaveFile;
+    public GameSegments currentGameSegment;
 
     // Player Data
     public Player player;
