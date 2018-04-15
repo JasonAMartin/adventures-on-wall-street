@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Company", menuName = "AdventuresOnWallStreet/Company", order = 10)]
-public class Company : ScriptableObject
-{
+[CreateAssetMenu (fileName = "Company", menuName = "AdventuresOnWallStreet/Company", order = 10)]
+public class Company : ScriptableObject {
     public string companyName;
     public string stockSymbol;
     public CompanyType companyType;
@@ -17,4 +16,8 @@ public class Company : ScriptableObject
     public bool isBeingUsed = false;
     public CEO ceo;
     public StockPriceLevel stockPriceLevel;
+
+    public void UpdateStockPrice () {
+        stockPrice = stockPrice + 10;
+    }
 }

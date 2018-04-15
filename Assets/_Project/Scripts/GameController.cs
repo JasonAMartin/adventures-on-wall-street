@@ -228,6 +228,7 @@ public class GameController : MonoBehaviour {
     public void StartDayCycle () {
         //??
         // Update stock prices
+        ProcessStockPriceChanges ();
         // Update CEO stats
         // Update company stats
         // Any bankqrupties?
@@ -255,6 +256,13 @@ public class GameController : MonoBehaviour {
 
         if (gameDataBlueprint.currentGameSegment == GameDataBlueprint.GameSegments.NIGHT) {
             StartNightCycle ();
+        }
+    }
+
+    public void ProcessStockPriceChanges () {
+        var usedCompanies = gameDataBlueprint.companyList.Where (o => o.isBeingUsed == true);
+        for (int index = 0; index < usedCompanies.Count (); index++) {
+            usedCompanies.ElementAt (index).UpdateStockPrice ();
         }
     }
 

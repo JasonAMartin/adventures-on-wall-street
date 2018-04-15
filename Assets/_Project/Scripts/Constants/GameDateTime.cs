@@ -24,10 +24,8 @@ public class GameDateTime : ScriptableObject {
 	public void NextDay () {
 		int nextDay = currentDay + 1;
 		int nextMonth = currentMonth + 1;
-		Debug.Log ("Keys: " + currentMonth + " map len " + monthMap.Count);
 		monthNames currentMonthName = monthMap[currentMonth];
 		int lastMonthDay = maxMonthDays[currentMonthName];
-		Debug.Log ("LMD: " + lastMonthDay + " nextDay: " + nextDay);
 		if (lastMonthDay <= nextDay) {
 			// go to next month
 			currentDay = 1;
