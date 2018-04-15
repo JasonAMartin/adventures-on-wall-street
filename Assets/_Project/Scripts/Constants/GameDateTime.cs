@@ -45,4 +45,8 @@ public class GameDateTime : ScriptableObject {
 			currentDay++;
 		}
 	}
+
+	public string PrettyDate () {
+		return monthMap[currentMonth] + " " + currentDay + ", " + currentYear;
+	}
 }

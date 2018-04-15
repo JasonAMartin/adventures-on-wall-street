@@ -120,12 +120,7 @@ public class GameController : MonoBehaviour {
             Debug.Log ("ERROR!!!!");
             return;
         }
-
         PickStartingCompanies (companyTypeList, companyLevelList, rulesetsList);
-        for (int i = 0; i < 456; i++) {
-            gameDataBlueprint.gameDateTime.NextDay ();
-        }
-        Debug.LogWarning ("Work-- DAY:  " + gameDataBlueprint.gameDateTime.currentDay + " month: " + gameDataBlueprint.gameDateTime.currentMonth + " YEAR: " + gameDataBlueprint.gameDateTime.currentYear);
     }
 
     public void PickStartingCompanies (List<CompanyType> companyTypeList, List<CompanyLevel> companyLevelList, List<RuleSets> rulesetsList) {
@@ -254,6 +249,7 @@ public class GameController : MonoBehaviour {
         if (gameDataBlueprint.currentGameSegment == GameDataBlueprint.GameSegments.NIGHT) {
             StartNightCycle ();
             gameDataBlueprint.daysPlayed++;
+            gameDataBlueprint.GameDateTime.NextDay ();
         }
     }
 
