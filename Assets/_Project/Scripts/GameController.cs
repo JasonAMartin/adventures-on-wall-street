@@ -243,15 +243,18 @@ public class GameController : MonoBehaviour {
         // Night cycle is over, so inc days up by one.
     }
 
-    public void StartNextTurn (GameDataBlueprint.GameSegments lastSegment) {
+    public void StartNextTurn () {
         // Swap to next segment
-        GameDataBlueprint.GameSegments nextSegment = (lastSegment == GameDataBlueprint.GameSegments.DAY) ? GameDataBlueprint.GameSegments.NIGHT : GameDataBlueprint.GameSegments.DAY;
+        GameDataBlueprint.GameSegments nextSegment = (gameDataBlueprint.currentGameSegment == GameDataBlueprint.GameSegments.DAY) ? GameDataBlueprint.GameSegments.NIGHT : GameDataBlueprint.GameSegments.DAY;
         gameDataBlueprint.currentGameSegment = nextSegment;
-        if (gameDataBlueprint.currentGameSegment == GameDataBlueprint.GameSegments.DAY) StartDayCycle ();
-        if (gameDataBlueprint.currentGameSegment == GameDataBlueprint.GameSegments.NIGHT) {
-            StartNightCycle ();
+        if (gameDataBlueprint.currentGameSegment == GameDataBlueprint.GameSegments.DAY) {
             gameDataBlueprint.daysPlayed++;
             gameDataBlueprint.GameDateTime.NextDay ();
+            StartDayCycle ();
+        }
+
+        if (gameDataBlueprint.currentGameSegment == GameDataBlueprint.GameSegments.NIGHT) {
+            StartNightCycle ();
         }
     }
 
