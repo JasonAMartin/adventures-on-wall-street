@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 928068660
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 36913f4043e657566b6830ca4808e025
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2594d4a9eb1ed87126dbac844a2c89b8
+HashAppended: 0
+ClassTypes:
+- Class: 114
+  Script: {fileID: 11500000, guid: 45e34423cdfb2b34cb1534b4eef27efc, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+Assets:
+- Assets/_Project/Scripts/ScriptableObjects/Systems/GameDateTime.asset
+Dependencies: []

@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1732937435
+CRC: 1833637841
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: a5e79810420248ee7d14f91303e2334d
+    Hash: d8b973eecff9bf3cad34d1f1bba86092
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 93c0405f6d910d450aa478a4b7a0ba52
+    Hash: bd10a262fd76141df1cf12a4377334ad
 HashAppended: 0
 ClassTypes:
 - Class: 114
@@ -28,13 +28,19 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 37dc5253dbee9104d9ebf1b65c48f75d, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: dba2067662461e24a937b3489aed6702, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 521ab8b64041b084ba70f165fe3644e8, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 05722ee6465ad534abb32c5e2930f913, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 61d9f1676f19a3d47b71f442ef4994e2, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: cd14ca978ba52db4f9ae1cf579c088b6, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 5af00cd73514bd14190aa7875ddcb846, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 37d878a8a4d44fd439d5b35f2fe4852c, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 95e86779245ee0542ae1c3eab908072d, type: 3}
 - Class: 114
@@ -50,6 +56,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: b5e4179b790bbc742a7a149a8ef26fba, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: a7fc0babc4d72514687269d68b3fc121, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 4af7ddbbd2833bd47b9ef357cb371266, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 056bddcbad6405d4190c332de7df62d9, type: 3}
@@ -64,17 +72,11 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 993b3a4f5d8119640b86d2d912d70553, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 5dd1acaf353a47c4d87405c8d0d1cdca, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: a7fc0babc4d72514687269d68b3fc121, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 05722ee6465ad534abb32c5e2930f913, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: dba2067662461e24a937b3489aed6702, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: c57643afa10ce3f41914fae611d03b35, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 37d878a8a4d44fd439d5b35f2fe4852c, type: 3}
+  Script: {fileID: 11500000, guid: 5dd1acaf353a47c4d87405c8d0d1cdca, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 45e34423cdfb2b34cb1534b4eef27efc, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 Assets:
@@ -255,6 +257,7 @@ Assets:
 - Assets/_Project/Scripts/ScriptableObjects/RelationshipDrivers/BuyingSellingStock/BUY_STOCK_TELECOMMUNICATIONS_ADD_RELATIONSHIP_POINTS.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Kinsley-Vargas.asset
 - Assets/_Project/Scripts/ScriptableObjects/Personality/OPTIMIST.asset
+- Assets/_Project/Scripts/ScriptableObjects/Systems/GameDateTime.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Gordon-Buck.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Jean-Kerr.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Mindi-Miranda.asset

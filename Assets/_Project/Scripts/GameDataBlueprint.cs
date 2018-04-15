@@ -20,11 +20,25 @@ public class GameDataBlueprint
     public string gameSaveFile;
     public GameSegments currentGameSegment;
 
+    public GameDateTime gameDateTime;
+
     // Player Data
     public Player player;
 
     // Get/Set Methods
 
+    public GameDateTime GameDateTime
+    {
+        get
+        {
+            return gameDateTime;
+        }
+
+        set
+        {
+            gameDateTime = value;
+        }
+    }
     public CEOLevel CEOLevel
     {
         get
@@ -133,9 +147,9 @@ public class GameDataBlueprint
     /*
      *
      * Think this error is because I'm attaching Player to GameController. Since it's now a SO, it should be handled like others.
-     * 
+     *
      * In the SaveGameType, it's reading name, capital and score like 3 things. This needs to be converted to 1 SO object and this should fix it.
-     * 
+     *
      * case "playerName":
 						gameDataBlueprint.SetPlayerName(reader.ReadProperty<System.String> ());
 						break;
