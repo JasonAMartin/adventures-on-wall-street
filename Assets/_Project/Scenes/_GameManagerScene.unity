@@ -151,7 +151,6 @@ MonoBehaviour:
   canvasLoadGame: {fileID: 0}
   canvasNewGame: {fileID: 0}
   canvasSettings: {fileID: 0}
-  companyTypeList: {fileID: 11400000, guid: d4b79f10f522f0e449603c0aaa0adbd0, type: 2}
   stockPriceLevelList: {fileID: 11400000, guid: 45b638dd14648be45aa954f24e0d3b85,
     type: 2}
 --- !u!4 &222127003
@@ -271,5 +270,4 @@ MonoBehaviour:
   canvasLoadGame: {fileID: 0}
   canvasNewGame: {fileID: 0}
   canvasSettings: {fileID: 0}
-  companyTypeList: {fileID: 0}
   stockPriceLevelList: {fileID: 0}

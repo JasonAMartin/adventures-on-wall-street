@@ -45,12 +45,14 @@ public class GameController : MonoBehaviour {
     }
 
     public void HideAllCanvas (GameObject excludeCanvas) {
+        Debug.Log ("exclude: " + excludeCanvas);
         canvasMainMenu.SetActive (false);
         canvasGame.SetActive (false);
         canvasGameSetup.SetActive (false);
         canvasSaveGame.SetActive (false);
         canvasLoadGame.SetActive (false);
         canvasNewGame.SetActive (false);
+        canvasSettings.SetActive (false);
         if (excludeCanvas) excludeCanvas.SetActive (true);
     }
 
@@ -115,7 +117,7 @@ public class GameController : MonoBehaviour {
         gameDataBlueprint.ceoList = ceoList;
 
         currentGameState = GameStates.GAME_READY;
-        HideAllCanvas (canvasSaveGame);
+        HideAllCanvas (canvasGame);
         if (companyLevelList.Count () < 1) {
             Debug.Log ("ERROR!!!!");
             return;
