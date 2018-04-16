@@ -23,6 +23,7 @@ obj/
 *.booproj
 .vs
 .vscode
+.idea
 
 ============
 OS Generated
