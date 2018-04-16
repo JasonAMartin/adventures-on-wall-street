@@ -45,7 +45,6 @@ public class GameController : MonoBehaviour {
     }
 
     public void HideAllCanvas (GameObject excludeCanvas) {
-        Debug.Log ("exclude: " + excludeCanvas);
         canvasMainMenu.SetActive (false);
         canvasGame.SetActive (false);
         canvasGameSetup.SetActive (false);
@@ -260,6 +259,7 @@ public class GameController : MonoBehaviour {
     }
 
     public void ProcessStockPriceChanges () {
+        // For each company currently in use, process new stock price change
         var usedCompanies = gameDataBlueprint.companyList.Where (o => o.isBeingUsed == true);
         for (int index = 0; index < usedCompanies.Count (); index++) {
             usedCompanies.ElementAt (index).UpdateStockPrice ();

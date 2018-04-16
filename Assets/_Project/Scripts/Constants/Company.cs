@@ -18,6 +18,7 @@ public class Company : ScriptableObject {
     public StockPriceLevel stockPriceLevel;
 
     public void UpdateStockPrice () {
+        // TODO: need to figure out all the details for updating stock price.
         stockPrice = stockPrice + 10;
     }
 }
