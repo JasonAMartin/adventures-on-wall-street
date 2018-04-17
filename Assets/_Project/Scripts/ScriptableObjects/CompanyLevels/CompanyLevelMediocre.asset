@@ -14,3 +14,5 @@ MonoBehaviour:
   companyStrengthMin: 50
   companyStrengthMax: 69
   gameLevel: {fileID: 11400000, guid: 59e96eba903a5164c946dbe260fc70fc, type: 2}
+  chanceToAffectCEOPositve: 0
+  chanceToAffectCEONegative: 25

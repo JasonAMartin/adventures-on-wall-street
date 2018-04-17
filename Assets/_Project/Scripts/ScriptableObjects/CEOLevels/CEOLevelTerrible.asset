@@ -13,6 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   compentcyScoreMinimum: 5
   compentcyScoreMaximum: 49
-  employmentDaysMinimum: 180
-  employmentDaysMaximum: 730
+  employmentDaysMinimum: 1825
+  employmentDaysMaximum: 5475
   gameLevel: {fileID: 11400000, guid: 20f5b8c7ff8384d4ea627f21e7a3943b, type: 2}

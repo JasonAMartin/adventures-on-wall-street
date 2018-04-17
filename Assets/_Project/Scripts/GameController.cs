@@ -164,10 +164,10 @@ public class GameController : MonoBehaviour {
             matchingCompanies.ElementAt (diceRoll).ceo = matchingCeos.ElementAt (ceoDice);
 
             // update CEO employment
-            matchingCeos.ElementAt (ceoDice).isEmployed = true;
-            matchingCeos.ElementAt (ceoDice).employedBy = matchingCompanies.ElementAt (diceRoll);
-            matchingCeos.ElementAt (ceoDice).employmentHistory.Add (matchingCompanies.ElementAt (diceRoll));
-
+            matchingCompanies.ElementAt (diceRoll).ceo.isEmployed = true;
+            matchingCompanies.ElementAt (diceRoll).ceo.employedBy = matchingCompanies.ElementAt (diceRoll);
+            matchingCompanies.ElementAt (diceRoll).ceo.employmentHistory.Add (matchingCompanies.ElementAt (diceRoll));
+            matchingCompanies.ElementAt (diceRoll).ceo.SetInitialEmploymentCapacity (matchingCompanies.ElementAt (diceRoll));
         }
 
         DebugIt ();
@@ -229,6 +229,7 @@ public class GameController : MonoBehaviour {
         // Update stock prices
         ProcessStockPriceChanges ();
         // Update CEO stats
+        UpdateCEOS ();
         // Update company stats
         // Any bankqrupties?
         // Any new companies?
@@ -263,6 +264,16 @@ public class GameController : MonoBehaviour {
         var usedCompanies = gameDataBlueprint.companyList.Where (o => o.isBeingUsed == true);
         for (int index = 0; index < usedCompanies.Count (); index++) {
             usedCompanies.ElementAt (index).UpdateStockPrice ();
+        }
+    }
+
+    public void UpdateCEOS () {
+        var usedCompanies = gameDataBlueprint.companyList.Where (o => o.isBeingUsed == true);
+        for (int index = 0; index < usedCompanies.Count (); index++) {
+            CEO currentCeo = usedCompanies.ElementAt (index).ceo;
+            currentCeo.AddEmploymentTurn ();
+            currentCeo.UpdateEmploymentTermCapacity (usedCompanies.ElementAt (index));
+            bool jobQuit = currentCeo.IsQuitting ();
         }
     }
 

@@ -24,6 +24,6 @@ public class StockExchangeListItem : MonoBehaviour {
 	}
 
 	void DisplayData () {
-		displayCompanyName.GetComponent<Text> ().text = displayCompany.companyName.ToString () + " $" + displayCompany.stockPrice.ToString ();
+		displayCompanyName.GetComponent<Text> ().text = displayCompany.companyName.ToString () + " $" + displayCompany.stockPrice.ToString () + " CEO DAYS: " + displayCompany.ceo.employmentTermCapacity;
 	}
 }
