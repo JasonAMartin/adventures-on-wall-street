@@ -43,7 +43,6 @@ namespace BayatGames.SaveGamePro.Serialization
 		{
 			m_Types = new Dictionary<Type, SaveGameType> ();
 			#if (UNITY_WSA || UNITY_WINRT) && !UNITY_EDITOR
-			AddType ( typeof ( GameDataBlueprint ), new SaveGameType_GameDataBlueprint () );
 			AddType ( typeof ( AnchoredJoint2D ), new SaveGameType_AnchoredJoint2D () );
 			AddType ( typeof ( Animation ), new SaveGameType_Animation () );
 			AddType ( typeof ( AnimationClip ), new SaveGameType_AnimationClip () );
@@ -263,6 +262,7 @@ namespace BayatGames.SaveGamePro.Serialization
 			AddType ( typeof ( WheelHit ), new SaveGameType_WheelHit () );
 			AddType ( typeof ( WheelJoint2D ), new SaveGameType_WheelJoint2D () );
 			AddType ( typeof ( WindZone ), new SaveGameType_WindZone () );
+			AddType ( typeof ( GameDataBlueprint ), new SaveGameType_GameDataBlueprint () );
 
 			#else
 			Type type = typeof ( SaveGameType );

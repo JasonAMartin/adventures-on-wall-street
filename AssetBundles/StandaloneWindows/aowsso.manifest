@@ -1,16 +1,18 @@
 ManifestFileVersion: 0
-CRC: 4204279838
+CRC: 274166911
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: f87e526d469df27be9f01adab0f71e8b
+    Hash: fef55c6ed6dee3e32d247b6aff0d401b
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 1cfecd4a7b21a56dba883e38eb8a64f4
+    Hash: 0379c2fe47c14b936c538f9afcf5cf14
 HashAppended: 0
 ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 7a8fee70125195f438b3d21a356d6fde, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 878c2fd08bf7fb549a9fa92f50bb43a7, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 14b43e513acd0954b8ad591dbe10a56b, type: 3}
 - Class: 114
@@ -22,6 +24,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: ca7380a2b0265cf4682377485f2b71e7, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 4fa461035be49c745b716fc5ec4a9918, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 45e34423cdfb2b34cb1534b4eef27efc, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: f53f803330615c445936d276f4d517ea, type: 3}
@@ -29,6 +33,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: d4539843eb0140d45bae6588990ecbfd, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 37dc5253dbee9104d9ebf1b65c48f75d, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: d41cc19359680a94786019be41d58331, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: dba2067662461e24a937b3489aed6702, type: 3}
 - Class: 114
@@ -64,6 +70,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 056bddcbad6405d4190c332de7df62d9, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 2ab47e4c9645a0d428d2ff3bf4efdfac, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: f352e98c819b35d478835af46e7cdda1, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: b5597ffcbbb82ff49af265c0266a20ba, type: 3}
@@ -95,6 +103,7 @@ Assets:
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Gaylord-Hubbard.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Kasen-Glass.asset
 - Assets/_Project/Scripts/ScriptableObjects/RelationshipDrivers/BuyingSellingStock/BUY_STOCK_MINING_REMOVE_RELATIONSHIP_POINTS.asset
+- Assets/_Project/Scripts/ScriptableObjects/Transactions/TransactionLuxurySell.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Marion-Kirk.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOLevels/CEOLevelTerrible.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Quinn-Webb.asset
@@ -172,6 +181,7 @@ Assets:
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Sandra-Cobb.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Josef-Shepard.asset
 - Assets/_Project/Scripts/ScriptableObjects/RelationshipDrivers/BuyingSellingStock/BUY_STOCK_AEROSPACE_ADD_RELATIONSHIP_POINTS.asset
+- Assets/_Project/Scripts/ScriptableObjects/GoodsType/STOCK.asset
 - Assets/_Project/Scripts/ScriptableObjects/RelationshipDrivers/AcceptingDecliningEventOffers/DECLINE_EVENT_OFFER_REMOVE_RELATIONSHIP_POINTS_BUSINESS.asset
 - Assets/_Project/Scripts/ScriptableObjects/Company/Company-CaptainMotors.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Kasha-Price.asset
@@ -266,6 +276,7 @@ Assets:
 - Assets/_Project/Scripts/ScriptableObjects/CompanyTypes/CompanyType-Transportation.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Ismael-Woodard.asset
 - Assets/_Project/Scripts/ScriptableObjects/CompanyTypes/CompanyType-Energy.asset
+- Assets/_Project/Scripts/ScriptableObjects/Transactions/TransactionTechBuy.asset
 - Assets/_Project/Scripts/ScriptableObjects/RuleSets/RuleSetsEasy.asset
 - Assets/_Project/Scripts/ScriptableObjects/Company/Company-PASteel.asset
 - Assets/_Project/Scripts/ScriptableObjects/CompanyLevels/CompanyLevelAverage.asset
@@ -279,6 +290,7 @@ Assets:
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Triston-Gamble.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Valeria-Odom.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Linnea-Nichols.asset
+- Assets/_Project/Scripts/ScriptableObjects/TransactionHistory/TransactionHistory.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Alondra-Strong.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Isis-Perry.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Anna-Hubbard.asset
@@ -292,6 +304,7 @@ Assets:
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Luciano-Kirby.asset
 - Assets/_Project/Scripts/ScriptableObjects/Company/Company-RainmenFinancial.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Janell-Hudson.asset
+- Assets/_Project/Scripts/ScriptableObjects/Transactions/List/TransactionOptionsList.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Sophie-Lin.asset
 - Assets/_Project/Scripts/ScriptableObjects/Company/Company-TWAirlines.asset
 - Assets/_Project/Scripts/ScriptableObjects/RelationshipTypes/Enemy.asset
@@ -407,6 +420,7 @@ Assets:
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Cletus-Trujillo.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Armando-Mckenzie.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Ernesto-Poole.asset
+- Assets/_Project/Scripts/ScriptableObjects/Transactions/TransactionLuxuryBuy.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Olive-Boyd.asset
 - Assets/_Project/Scripts/ScriptableObjects/RelationshipDrivers/BuyingSellingStock/BUY_STOCK_FINANCIAL_ADD_RELATIONSHIP_POINTS.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Camron-Thomas.asset
@@ -740,6 +754,7 @@ Assets:
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Dominick-Manning.asset
 - Assets/_Project/Scripts/ScriptableObjects/RelationshipTypes/Friend.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Adeline-Farmer.asset
+- Assets/_Project/Scripts/ScriptableObjects/Transactions/TransactionJewelryBuy.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Yan-Levy.asset
 - Assets/_Project/Scripts/ScriptableObjects/RelationshipDrivers/BuyingSellingStock/BUY_STOCK_AGRICULTURE_REMOVE_RELATIONSHIP_POINTS.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Jaqueline-Arroyo.asset
@@ -763,6 +778,7 @@ Assets:
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Sandie-Melton.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Jenette-Vasquez.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Ali-Willis.asset
+- Assets/_Project/Scripts/ScriptableObjects/Transactions/TransactionStockSell.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Waneta-Cochran.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Katrina-Ferrell.asset
 - Assets/_Project/Scripts/ScriptableObjects/Occupations/CEO.asset
@@ -776,6 +792,7 @@ Assets:
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Elvera-Chapman.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Barbra-Patel.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Landyn-Sexton.asset
+- Assets/_Project/Scripts/ScriptableObjects/Transactions/TransactionJewelrySell.asset
 - Assets/_Project/Scripts/ScriptableObjects/RelationshipDrivers/BuyingSellingStock/BUY_STOCK_ENERGY_REMOVE_RELATIONSHIP_POINTS.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Marta-Davies.asset
 - Assets/_Project/Scripts/ScriptableObjects/Personality/EXTROVERT.asset
@@ -795,6 +812,7 @@ Assets:
 - Assets/_Project/Scripts/ScriptableObjects/Company/Company-Symantics.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Payton-Malone.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Houston-White.asset
+- Assets/_Project/Scripts/ScriptableObjects/Transactions/TransactionTechSell.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Ernest-Mason.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Mose-Conner.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Jordon-Hudson.asset
@@ -805,6 +823,7 @@ Assets:
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Santo-Bean.asset
 - Assets/_Project/Scripts/ScriptableObjects/EventRulesets/EventRuleset-Hard.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Dakota-Baldwin.asset
+- Assets/_Project/Scripts/ScriptableObjects/Transactions/TransactionStockBuy.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Jeramiah-May.asset
 - Assets/_Project/Scripts/ScriptableObjects/NPCs/NPC-Jason-A-Martin.asset
 - Assets/_Project/Scripts/ScriptableObjects/CEOs/CEO-Audrie-Wolfe.asset

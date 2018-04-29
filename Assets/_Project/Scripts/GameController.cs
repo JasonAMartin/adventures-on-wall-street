@@ -165,8 +165,12 @@ public class GameController : MonoBehaviour {
 
             // update CEO employment
             matchingCompanies.ElementAt (diceRoll).ceo.isEmployed = true;
-            matchingCompanies.ElementAt (diceRoll).ceo.employedBy = matchingCompanies.ElementAt (diceRoll);
-            matchingCompanies.ElementAt (diceRoll).ceo.employmentHistory.Add (matchingCompanies.ElementAt (diceRoll));
+            /*
+                Removed employedBy and history from CEO as they were crashing game as implemented (attaching object to object, which then attached original object and so on)
+                   matchingCompanies.ElementAt (diceRoll).ceo.employedBy = matchingCompanies.ElementAt (diceRoll);
+                   matchingCompanies.ElementAt (diceRoll).ceo.employmentHistory.Add (matchingCompanies.ElementAt (diceRoll));
+             */
+
             matchingCompanies.ElementAt (diceRoll).ceo.SetInitialEmploymentCapacity (matchingCompanies.ElementAt (diceRoll));
         }
 
