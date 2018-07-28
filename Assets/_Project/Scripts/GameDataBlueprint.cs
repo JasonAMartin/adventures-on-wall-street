@@ -3,142 +3,116 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameDataBlueprint
-{
+public class GameDataBlueprint {
     // Setup
     public enum GameSegments { DAY, NIGHT };
 
-    // Game Actors
-    public CEOLevel ceoLevel;
-    public List<CEO> ceoList;
-    public List<Company> companyList;
-    public List<NPC> npcList;
+ // Game Actors
+ public CEOLevel ceoLevel;
+ public List<CEO> ceoList;
+ public List<Company> companyList;
+ public List<NPC> npcList;
 
-    // Game Data
-    public GameDifficulty gameDifficulty;
-    public int daysPlayed;
-    public string gameSaveFile;
-    public GameSegments currentGameSegment;
+ // Game Data
+ public GameDifficulty gameDifficulty;
+ public int daysPlayed;
+ public string gameSaveFile;
+ public GameSegments currentGameSegment;
 
-    public GameDateTime gameDateTime;
+ public GameDateTime gameDateTime;
 
-    // Player Data
-    public Player player;
+ // Player Data
+ public Player player;
 
-    // Get/Set Methods
+ public List<Transaction> transactionHistory;
 
-    public GameDateTime GameDateTime
-    {
-        get
-        {
-            return gameDateTime;
+ // Get/Set Methods
+
+ public GameDateTime GameDateTime {
+ get {
+ return gameDateTime;
         }
 
-        set
-        {
+        set {
             gameDateTime = value;
         }
     }
-    public CEOLevel CEOLevel
-    {
-        get
-        {
+    public CEOLevel CEOLevel {
+        get {
             return ceoLevel;
         }
 
-        set
-        {
+        set {
             ceoLevel = value;
         }
     }
 
-    public Player Player
-    {
-        get
-        {
+    public Player Player {
+        get {
             return player;
         }
 
-        set
-        {
+        set {
             player = value;
         }
     }
 
-    public List<CEO> CEOList
-    {
-        get
-        {
+    public List<CEO> CEOList {
+        get {
             return ceoList;
         }
 
-        set
-        {
+        set {
             ceoList = value;
         }
     }
 
-    public List<Company> CompanyList
-    {
-        get
-        {
+    public List<Company> CompanyList {
+        get {
             return companyList;
         }
 
-        set
-        {
+        set {
             companyList = value;
         }
     }
 
-    public List<NPC> NPCList
-    {
-        get
-        {
+    public List<NPC> NPCList {
+        get {
             return npcList;
         }
 
-        set
-        {
+        set {
             npcList = value;
         }
     }
 
-    public GameDifficulty GameDifficulty
-    {
-        get
-        {
+    public GameDifficulty GameDifficulty {
+        get {
             return gameDifficulty;
         }
 
-        set
-        {
+        set {
             gameDifficulty = value;
         }
     }
 
-    public int DaysPlayed
-    {
-        get
-        {
+    public int DaysPlayed {
+        get {
             return daysPlayed;
         }
 
-        set
-        {
+        set {
             daysPlayed = value;
         }
     }
 
-    public string GameSaveFile
-    {
-        get
-        {
+    public string GameSaveFile {
+        get {
             return gameSaveFile;
         }
 
-        set
-        {
+        set {
             gameSaveFile = value;
         }
     }

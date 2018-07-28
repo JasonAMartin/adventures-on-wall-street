@@ -38,7 +38,10 @@ namespace BayatGames.SaveGamePro.Serialization.Types
 			writer.WriteProperty ( "npcList", gameDataBlueprint.npcList );
 			writer.WriteProperty ( "gameDifficulty", gameDataBlueprint.gameDifficulty );
 			writer.WriteProperty ( "daysPlayed", gameDataBlueprint.daysPlayed );
+			writer.WriteProperty("currentGameSegment", gameDataBlueprint.currentGameSegment);
+			writer.WriteProperty("gameDateTime", gameDataBlueprint.gameDateTime);
 			writer.WriteProperty ( "player", gameDataBlueprint.player);
+			writer.WriteProperty ("transactionHistory", gameDataBlueprint.transactionHistory);
 		}
 
 		/// <summary>
@@ -77,6 +80,10 @@ namespace BayatGames.SaveGamePro.Serialization.Types
 					case "ceoList":
 						gameDataBlueprint.ceoList = reader.ReadProperty<System.Collections.Generic.List<CEO>> ();
 						break;
+
+					case "transactionHistory":
+						gameDataBlueprint.transactionHistory = reader.ReadProperty<System.Collections.Generic.List<Transaction>> ();
+						break;
 					case "companyList":
 						gameDataBlueprint.companyList = reader.ReadProperty<System.Collections.Generic.List<Company>> ();
 						break;
@@ -96,21 +103,26 @@ namespace BayatGames.SaveGamePro.Serialization.Types
 					case "daysPlayed":
 						gameDataBlueprint.daysPlayed = reader.ReadProperty<System.Int32> ();
 						break;
-
-                    case "player":
-                        if (gameDataBlueprint.player == null)
-                        {
-                            gameDataBlueprint.player = reader.ReadProperty<Player>();
-                        }
-                        else
-                        {
-                            reader.ReadIntoProperty<Player>(gameDataBlueprint.player);
-                        }
-                        break;
+					case "currentGameSegment":
+						gameDataBlueprint.currentGameSegment = reader.ReadProperty<GameDataBlueprint.GameSegments> ();
+						break;
+					case "gameDateTime":
+						gameDataBlueprint.gameDateTime = reader.ReadProperty<GameDateTime> ();
+						break;
+					case "player":
+						if (gameDataBlueprint.player == null)
+						{
+								gameDataBlueprint.player = reader.ReadProperty<Player>();
+						}
+						else
+						{
+								reader.ReadIntoProperty<Player>(gameDataBlueprint.player);
+						}
+						break;
 				}
 			}
 		}
-		
+
 	}
 
 }

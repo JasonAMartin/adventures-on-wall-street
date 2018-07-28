@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab47e4c9645a0d428d2ff3bf4efdfac, type: 3}
+  m_Name: TransactionJewelryBuy
+  m_EditorClassIdentifier: 
+  transactionTurn: 0
+  quantity: 0
+  pricePerItem: 0
+  totalAmount: 0
+  actionType: 0
+  transactionType: {fileID: 11400000, guid: 4e4ec964769a231499294efe670e4046, type: 2}
+  isComplete: 0
