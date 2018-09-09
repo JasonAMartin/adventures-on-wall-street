@@ -9,13 +9,8 @@ public class CEO : ScriptableObject {
     public Gender gender;
     public CEOLevel ceoLevel;
     public bool isEmployed = false;
-    /*
-        Removed the following 2 items because they created a circular dependency, which resulted in save/load crashes.
-        If needed, should use a string name or something
-
-        public Company employedBy;
-        public List<Company> employmentHistory; // ideally make this more, like company + time, etc.
-     */
+    public Company employedBy;
+    public List<Company> employmentHistory; // ideally make this more, like company + time, etc.
     public int employmentTermCapacity; // how many turns this CEO is willing to be employed for
     public int employedTurns; // how many turns this CEO has been employed with current company
 

@@ -12,7 +12,7 @@ public class SaveGameName : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-      //  saveGameName.placeholder = "Enter your save game name here ...";
+      //  saveGameName.placeholder = "Enter your save game name here ...";	
 	}
 
     public string GetName()
@@ -25,17 +25,21 @@ public class SaveGameName : MonoBehaviour {
 
         gameController = GameObject.FindObjectOfType<GameController>();
 
+       //  GameDataBlueprint saveGameFile = new GameDataBlueprint();
+
+        
         SaveGameSettings settings = SaveGame.DefaultSettings;
-        // demo settings.Formatter = new BayatGames.SaveGamePro.Serialization.Formatters.Json.JsonFormatter();
         settings.Formatter = new BayatGames.SaveGamePro.Serialization.Formatters.Binary.BinaryFormatter();
         settings.Storage = new BayatGames.SaveGamePro.IO.SaveGameFileStorage();
         SaveGame.DefaultSettings = settings;
+
 
         FileInfo[] files = SaveGame.GetFiles();
         Debug.Log("FILES: " + files.Length);
         SaveGame.Save(saveGameName.text.ToString(), gameController.GetGameDataBlueprint(), settings);
 
         Debug.Log("save done. FILE: " + saveGameName.text);
+
 
         files = SaveGame.GetFiles();
         Debug.Log("UPDATED FILES: " + files.Length);

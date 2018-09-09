@@ -11,6 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 878c2fd08bf7fb549a9fa92f50bb43a7, type: 3}
   m_Name: TransactionTypeTech
   m_EditorClassIdentifier: 
-  transactionCost: 0
+  transactionCost: 1
   liquidationCost: 0.1
   goodsType: {fileID: 11400000, guid: 13da2dfa6c1f7804e81c958325447598, type: 2}
