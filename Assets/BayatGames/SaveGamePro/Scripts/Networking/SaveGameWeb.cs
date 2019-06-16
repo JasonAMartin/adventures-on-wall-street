@@ -187,7 +187,7 @@ namespace BayatGames.SaveGamePro.Networking
             form.Add("file-name", identifier);
             m_Request = UnityWebRequest.Post(m_Url, form);
 #if UNITY_2017_2_OR_NEWER
-			yield return m_Request.SendWebRequest ();
+            yield return m_Request.SendWebRequest();
 #else
             yield return m_Request.Send();
 #endif
@@ -227,9 +227,11 @@ namespace BayatGames.SaveGamePro.Networking
                 form.AddField("create-account", "");
             }
             form.AddBinaryData("file", data, uploadIdentifier);
+            //var form = CreateRequestForm("downloadfile", settings);
+            //form.Add("file-name", identifier);
             m_Request = UnityWebRequest.Post(m_Url, form);
 #if UNITY_2017_2_OR_NEWER
-			yield return m_Request.SendWebRequest ();
+            yield return m_Request.SendWebRequest();
 #else
             yield return m_Request.Send();
 #endif
@@ -260,23 +262,23 @@ namespace BayatGames.SaveGamePro.Networking
             form.Add("file-name", identifier);
             m_Request = UnityWebRequest.Post(m_Url, form);
 #if UNITY_2017_2_OR_NEWER
-			yield return m_Request.SendWebRequest ();
+            yield return m_Request.SendWebRequest();
 #else
             yield return m_Request.Send();
 #endif
 #if UNITY_2017_1_OR_NEWER
-            if ( m_Request.isHttpError || m_Request.isNetworkError )
-			{
-				Debug.LogError ( "Download Failed" );
-				Debug.LogError ( m_Request.error );
-				Debug.LogError ( m_Request.downloadHandler.text );
-			}
-			else
-			{
-				File.WriteAllBytes (
-					SaveGameFileStorage.GetAbsolutePath ( downloadIdentifier, settings.BasePath ),
-					m_Request.downloadHandler.data );
-			}
+            if (m_Request.isHttpError || m_Request.isNetworkError)
+            {
+                Debug.LogError("Download Failed");
+                Debug.LogError(m_Request.error);
+                Debug.LogError(m_Request.downloadHandler.text);
+            }
+            else
+            {
+                File.WriteAllBytes(
+                    SaveGameFileStorage.GetAbsolutePath(downloadIdentifier, settings.BasePath),
+                    m_Request.downloadHandler.data);
+            }
 #else
             if (m_Request.isError)
             {
@@ -311,7 +313,7 @@ namespace BayatGames.SaveGamePro.Networking
             var form = CreateRequestForm("save", identifier, data, settings);
             m_Request = UnityWebRequest.Post(m_Url, form);
 #if UNITY_2017_2_OR_NEWER
-			yield return m_Request.SendWebRequest ();
+            yield return m_Request.SendWebRequest();
 #else
             yield return m_Request.Send();
 #endif
@@ -327,7 +329,7 @@ namespace BayatGames.SaveGamePro.Networking
             var form = CreateRequestForm("load", identifier, settings);
             m_Request = UnityWebRequest.Post(m_Url, form);
 #if UNITY_2017_2_OR_NEWER
-			yield return m_Request.SendWebRequest ();
+            yield return m_Request.SendWebRequest();
 #else
             yield return m_Request.Send();
 #endif
@@ -376,7 +378,7 @@ namespace BayatGames.SaveGamePro.Networking
             var form = CreateRequestForm("clear", settings);
             m_Request = UnityWebRequest.Post(m_Url, form);
 #if UNITY_2017_2_OR_NEWER
-			yield return m_Request.SendWebRequest ();
+            yield return m_Request.SendWebRequest();
 #else
             yield return m_Request.Send();
 #endif
@@ -392,7 +394,7 @@ namespace BayatGames.SaveGamePro.Networking
             var form = CreateRequestForm("delete", settings);
             m_Request = UnityWebRequest.Post(m_Url, form);
 #if UNITY_2017_2_OR_NEWER
-			yield return m_Request.SendWebRequest ();
+            yield return m_Request.SendWebRequest();
 #else
             yield return m_Request.Send();
 #endif

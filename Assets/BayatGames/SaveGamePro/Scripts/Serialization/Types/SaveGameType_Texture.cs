@@ -39,9 +39,9 @@ namespace BayatGames.SaveGamePro.Serialization.Types
             writer.WriteProperty("anisoLevel", texture.anisoLevel);
             writer.WriteProperty("wrapMode", texture.wrapMode);
 #if UNITY_2017_1_OR_NEWER
-			writer.WriteProperty ( "wrapModeU", texture.wrapModeU );
-			writer.WriteProperty ( "wrapModeV", texture.wrapModeV );
-			writer.WriteProperty ( "wrapModeW", texture.wrapModeW );
+            writer.WriteProperty("wrapModeU", texture.wrapModeU);
+            writer.WriteProperty("wrapModeV", texture.wrapModeV);
+            writer.WriteProperty("wrapModeW", texture.wrapModeW);
 #endif
             writer.WriteProperty("mipMapBias", texture.mipMapBias);
             writer.WriteProperty("name", texture.name);
@@ -54,7 +54,7 @@ namespace BayatGames.SaveGamePro.Serialization.Types
         /// <param name="reader">Reader.</param>
         public override object Read(ISaveGameReader reader)
         {
-            UnityEngine.Texture texture = new UnityEngine.Texture();
+            UnityEngine.Texture texture = new UnityEngine.Texture2D(0, 0);
             ReadInto(texture, reader);
             return texture;
         }

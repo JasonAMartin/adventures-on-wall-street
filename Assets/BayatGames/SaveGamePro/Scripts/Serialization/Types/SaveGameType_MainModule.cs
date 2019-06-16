@@ -59,7 +59,7 @@ namespace BayatGames.SaveGamePro.Serialization.Types
             writer.WriteProperty("startRotationYMultiplier", mainModule.startRotationYMultiplier);
             writer.WriteProperty("startRotationZ", mainModule.startRotationZ);
             writer.WriteProperty("startRotationZMultiplier", mainModule.startRotationZMultiplier);
-            writer.WriteProperty("randomizeRotationDirection", mainModule.randomizeRotationDirection);
+            //writer.WriteProperty("randomizeRotationDirection", mainModule.flipRotation);
             writer.WriteProperty("startColor", mainModule.startColor);
             writer.WriteProperty("gravityModifier", mainModule.gravityModifier);
             writer.WriteProperty("gravityModifierMultiplier", mainModule.gravityModifierMultiplier);
@@ -67,7 +67,7 @@ namespace BayatGames.SaveGamePro.Serialization.Types
             writer.WriteProperty("customSimulationSpace", mainModule.customSimulationSpace);
             writer.WriteProperty("simulationSpeed", mainModule.simulationSpeed);
 #if UNITY_2017_1_OR_NEWER
-			writer.WriteProperty ( "useUnscaledTime", mainModule.useUnscaledTime );
+            writer.WriteProperty("useUnscaledTime", mainModule.useUnscaledTime);
 #endif
             writer.WriteProperty("scalingMode", mainModule.scalingMode);
             writer.WriteProperty("playOnAwake", mainModule.playOnAwake);
@@ -169,8 +169,8 @@ namespace BayatGames.SaveGamePro.Serialization.Types
                     case "startRotationZMultiplier":
                         mainModule.startRotationZMultiplier = reader.ReadProperty<System.Single>();
                         break;
-                    case "randomizeRotationDirection":
-                        mainModule.randomizeRotationDirection = reader.ReadProperty<System.Single>();
+                    case "randomizeRotationDirection": // Removed in Unity 2017.4
+                        reader.ReadProperty<System.Single>();
                         break;
                     case "startColor":
                         mainModule.startColor = reader.ReadProperty<UnityEngine.ParticleSystem.MinMaxGradient>();

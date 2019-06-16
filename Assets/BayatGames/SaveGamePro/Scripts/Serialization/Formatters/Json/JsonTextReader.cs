@@ -6,6 +6,7 @@ using System.Runtime.Serialization;
 using System.Reflection;
 using System.Text;
 
+using BayatGames.SaveGamePro.Reflection;
 using BayatGames.SaveGamePro.Serialization.Types;
 using BayatGames.SaveGamePro.Utilities;
 
@@ -95,6 +96,7 @@ namespace BayatGames.SaveGamePro.Serialization.Formatters.Json
         /// <param name="type">Type.</param>
         public override object Read(Type type)
         {
+            Type nullableType = null;
             object result = null;
             if (type == null || string.IsNullOrEmpty(m_Json))
             {
@@ -107,6 +109,11 @@ namespace BayatGames.SaveGamePro.Serialization.Formatters.Json
             }
             else
             {
+                if (Nullable.GetUnderlyingType(type) != null)
+                {
+                    nullableType = type;
+                    type = Nullable.GetUnderlyingType(type);
+                }
                 bool isEnum = false;
                 bool isSerializable = false;
                 bool isGeneric = false;
@@ -193,9 +200,13 @@ namespace BayatGames.SaveGamePro.Serialization.Formatters.Json
                         string typeFullName = ReadQoutedString();
                         Type componentType = Type.GetType(typeFullName);
                         UnityEngine.Component component = gameObject.GetComponent(componentType);
-                        if (component == null)
+                        if (componentType != typeof(UnityEngine.Transform) && componentType.BaseType != typeof(UnityEngine.Transform))
                         {
-                            component = gameObject.AddComponent(componentType);
+                            UnityEngine.Component newComponent = gameObject.AddComponent(componentType);
+                            if (newComponent != null)
+                            {
+                                component = newComponent;
+                            }
                         }
 
                         // Skip comma
@@ -600,6 +611,20 @@ namespace BayatGames.SaveGamePro.Serialization.Formatters.Json
                     m_Position++;
 
                 }
+                else if (SaveGameTypeManager.HasType(type))
+                {
+
+                    // Skip object start
+                    m_Position++;
+
+                    m_IsFirstProperty = true;
+                    SaveGameType saveGameType = SaveGameTypeManager.GetType(type);
+                    result = saveGameType.Read(this);
+
+                    // Skip object end
+                    m_Position++;
+
+                }
                 else
                 {
                     result = ReadObject(type);
@@ -611,6 +636,11 @@ namespace BayatGames.SaveGamePro.Serialization.Formatters.Json
                 (result as IDeserializationCallback).OnDeserialization(this);
             }
 #endif
+            if (nullableType != null)
+            {
+                Type genericType = type.GetNullableType();
+                result = Activator.CreateInstance(genericType, result);
+            }
             return result;
         }
 
@@ -882,7 +912,7 @@ namespace BayatGames.SaveGamePro.Serialization.Formatters.Json
             }
             else
             {
-                ReadSavableMembers(value, type);
+                ReadIntoObject(type, value);
             }
         }
 
@@ -976,9 +1006,13 @@ namespace BayatGames.SaveGamePro.Serialization.Formatters.Json
                     string typeFullName = ReadQoutedString();
                     Type componentType = Type.GetType(typeFullName);
                     UnityEngine.Component component = gameObject.GetComponent(componentType);
-                    if (component == null)
+                    if (componentType != typeof(UnityEngine.Transform) && componentType.BaseType != typeof(UnityEngine.Transform))
                     {
-                        component = gameObject.AddComponent(componentType);
+                        UnityEngine.Component newComponent = gameObject.AddComponent(componentType);
+                        if (newComponent != null)
+                        {
+                            component = newComponent;
+                        }
                     }
 
                     // Skip comma
@@ -1293,25 +1327,36 @@ namespace BayatGames.SaveGamePro.Serialization.Formatters.Json
         }
 
         /// <summary>
-        /// Reads the object.
+        /// Instantiates Objects and Reads the data into it.
         /// </summary>
-        /// <returns>The object.</returns>
-        /// <param name="type">Type.</param>
+        /// <param name="type"></param>
+        /// <returns></returns>
         protected virtual object ReadObject(Type type)
         {
             object result = null;
-            if (type.IsSubclassOf(typeof(UnityEngine.ScriptableObject)))
+            if (type.IsSubclassOf<UnityEngine.ScriptableObject>())
             {
                 result = UnityEngine.ScriptableObject.CreateInstance(type);
             }
-            else if (type.IsValueType)
+            else if (type.IsValueType())
             {
                 result = Activator.CreateInstance(type);
             }
             else
             {
-                result = FormatterServices.GetUninitializedObject(type);
+                result = type.CreateInstance();
             }
+            ReadObject(type, result);
+            return result;
+        }
+
+        /// <summary>
+        /// Reads the object.
+        /// </summary>
+        /// <returns>The object.</returns>
+        /// <param name="type">Type.</param>
+        protected virtual void ReadObject(Type type, object result)
+        {
             if (result != null)
             {
                 if (result is ISavable)
@@ -1328,15 +1373,31 @@ namespace BayatGames.SaveGamePro.Serialization.Formatters.Json
                     m_Position++;
 
                 }
-                else if (SaveGameTypeManager.HasType(type))
+                else
+                {
+                    ReadSavableMembers(result, type);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Reads into the object.
+        /// </summary>
+        /// <returns>The object.</returns>
+        /// <param name="type">Type.</param>
+        protected virtual void ReadIntoObject(Type type, object result)
+        {
+            if (result != null)
+            {
+                if (result is ISavable)
                 {
 
                     // Skip object start
                     m_Position++;
 
                     m_IsFirstProperty = true;
-                    SaveGameType saveGameType = SaveGameTypeManager.GetType(type);
-                    result = saveGameType.Read(this);
+                    ISavable savable = result as ISavable;
+                    savable.OnRead(this);
 
                     // Skip object end
                     m_Position++;
@@ -1344,10 +1405,9 @@ namespace BayatGames.SaveGamePro.Serialization.Formatters.Json
                 }
                 else
                 {
-                    ReadSavableMembers(result, type);
+                    ReadIntoSavableMembers(result, type);
                 }
             }
-            return result;
         }
 
         /// <summary>
@@ -1375,7 +1435,7 @@ namespace BayatGames.SaveGamePro.Serialization.Formatters.Json
                     m_Position++;
                 }
                 string name = ReadQoutedString();
-                FieldInfo field = type.GetField(name);
+                FieldInfo field = type.GetSavableField(name);
                 if (field != null)
                 {
                     // Skip colon
@@ -1384,13 +1444,76 @@ namespace BayatGames.SaveGamePro.Serialization.Formatters.Json
                     field.SetValue(obj, value);
                     continue;
                 }
-                PropertyInfo property = type.GetProperty(name);
+                PropertyInfo property = type.GetSavableProperty(name);
                 if (property != null)
                 {
                     // Skip colon
                     m_Position++;
                     object value = Read(property.PropertyType);
                     property.SetValue(obj, value, null);
+                    continue;
+                }
+            }
+
+            // Skip object start
+            m_Position++;
+        }
+
+        /// <summary>
+        /// Reads into the savable members.
+        /// </summary>
+        /// <param name="obj">Object.</param>
+        /// <param name="type">Type.</param>
+        public override void ReadIntoSavableMembers(object obj, Type type)
+        {
+
+            // Skip object start
+            m_Position++;
+
+            bool isFirst = true;
+            int length = GetObjectLength();
+            for (int i = 0; i < length; i++)
+            {
+                if (isFirst)
+                {
+                    isFirst = false;
+                }
+                else
+                {
+                    // Skip comma
+                    m_Position++;
+                }
+                string name = ReadQoutedString();
+                FieldInfo field = type.GetSavableField(name);
+                if (field != null)
+                {
+                    // Skip colon
+                    m_Position++;
+                    object fieldValue = field.GetValue(obj);
+                    if (fieldValue == null)
+                    {
+                        field.SetValue(obj, Read(field.FieldType));
+                    }
+                    else
+                    {
+                        ReadInto(fieldValue);
+                    }
+                    continue;
+                }
+                PropertyInfo property = type.GetSavableProperty(name);
+                if (property != null)
+                {
+                    // Skip colon
+                    m_Position++;
+                    object propertyValue = property.GetValue(obj, null);
+                    if (propertyValue == null)
+                    {
+                        property.SetValue(obj, Read(property.PropertyType), null);
+                    }
+                    else
+                    {
+                        ReadInto(propertyValue);
+                    }
                     continue;
                 }
             }

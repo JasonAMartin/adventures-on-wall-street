@@ -6,7 +6,7 @@ using UnityEngine;
 namespace BayatGames.SaveGamePro.Serialization.Types
 {
 
-#if !UNITY_SAMSUNGTV
+#if !UNITY_SAMSUNGTV && !UNITY_SWITCH && !UNITY_PSP2
 
     /// <summary>
     /// Save Game Type VideoPlayer serialization implementation.
